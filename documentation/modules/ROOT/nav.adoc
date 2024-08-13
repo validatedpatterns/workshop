@@ -1,5 +1,5 @@
-* xref:overview.adoc[1. Setup]
-** xref:overview.adoc#prereqs[Pre-Requisites]
+* xref:getting-started.adoc[1. Getting Started]
+** xref:getting-started.adoc#prereqs[Pre-Requisites]
 
 * xref:02-deploy.adoc[2. Deploy Service]
 ** xref:02-deploy.adoc#package[Build Service]
