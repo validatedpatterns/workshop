@@ -4,3 +4,28 @@
 * xref:02-deploy.adoc[2. Deploy Service]
 ** xref:02-deploy.adoc#package[Build Service]
 ** xref:02-deploy.adoc#deploy[Deploy Dervice]
+
+* xref:patterns.adoc[Introduction]
+** xref:patterns.adoc#benefits[Benefits of Validated Patterns]
+** xref:patterns.adoc#batteries[Batteries Included]
+** xref:patterns.adoc#whotheyfor[Who are the Patterns for]
+
+* xref:landscape.adoc[Existing Pattern Landscape]
+** xref:landscape.adoc#website[Where to find existing Patterns]
+
+* xref:tiers.adoc[Pattern Tiers]
+** xref:tiers.adoc#tiers[Pattern Tiers]
+
+* xref:createConsumePatterns.adoc[Creating and Consuming Patterns]
+* xref:createConsumePatterns.adoc[Exercises]
+
+* xref:secrets.adoc[Secrets Management]
+* xref:secrets.adoc[Exercises]
+
+* xref:selfContained.adoc[Self Contained Patterns]
+* xref:selfContained.adoc[Exercises]
+
+* xref:gitopsRoughEdges.adoc[GitOps Rough Edges]
+* xref:gitopsRoughEdges.adoc[Exercises]
+
+* xref:additionalTopics.adoc[Additional Resources]
