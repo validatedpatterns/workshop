@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the Validated Patterns Workshop :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/index.html">
-    <link rel="next" href="getting-started.html">
+    <title>Getting Started :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/getting-started.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="02-deploy.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -50,12 +51,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="getting-started.html">1. Getting Started</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="getting-started.html#prereqs">Pre-Requisites</a>
+    <a class="nav-link" href="#prereqs">Pre-Requisites</a>
   </li>
 </ul>
   </li>
@@ -82,76 +83,103 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="index.html">Welcome to the Validated Patterns Workshop</a></li>
+    <li><a href="getting-started.html">1. Getting Started</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/getting-started.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Welcome to the Validated Patterns Workshop</h1>
-<div class="sect1 text-center strong">
-<h2>Overview</h2>
+<h1 class="page">Getting Started</h1>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
-<div id="vp-workshop-all-local" class="paragraph">
-<p><strong>Reference Architectures with Added Value</strong></p>
+<div id="prereqs" class="paragraph">
+<p>The following CLI tools are required for running the exercises in this workshop. Please have them installed and configured prior to beginning any of the workshop chapters.</p>
 </div>
-<div class="paragraph">
-<p>Validated Patterns are an evolution of how you deploy and manage applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you canc reate business-centric solutions while maintaining a level of Continuous Integration (ci) over your application.</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>Tool</strong></th>
+<th class="tableblock halign-center valign-top"><strong>macOS</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Fedora</strong></th>
+<th class="tableblock halign-center valign-top"><strong>windows</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Git</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://git-scm.com/download/mac">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://git-scm.com/download/linux">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://git-scm.com/download/win">Download</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Podman</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://podman.io/docs/installation#macos">Download</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>dnf install podman</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://podman.io/docs/installation#windows">Download</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2>About the Validated Patterns Workshop</h2>
+<h2 id="openshift"><a class="anchor" href="#openshift"></a>Setup OpenShift</h2>
 <div class="sectionbody">
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_openshift"></a>OpenShift</p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_openshift">
 <div class="paragraph">
-<p>The goal of this workshop is to immerse the participant in foundational knowledge for creating, using and extending a GitOps pattern with the Validated Patterns framework. In this workshop participants will:</p>
+<p>To run OpenShift4, you need to have one provisioned using <a href="https://try.openshift.com">try.openshift.com</a> or can use any existing OpenShift4 cluster.
+Once you have your cluster, you can download the latest OpenShift client(oc) from <a href="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/">here</a> and add to your path.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Learn GitOps fundamentals</p>
-</li>
-<li>
-<p>Deploy a Validated Pattern</p>
-</li>
-<li>
-<p>Extend an existing Validated Pattern</p>
-</li>
-</ul>
+<div class="listingblock">
+<div class="content">
+<pre>oc version</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>You can check the OpenShift version using:</p>
 </div>
-<div class="sect1 tiles browse">
-<h2>Browse modules</h2>
-<div class="sectionbody">
-<div class="ulist tile">
-<div class="title"><a href="01-setup.html" class="xref page">Get Started</a></div>
-<ul>
-<li>
-<p><a href="01-setup.html#minikube" class="xref page">Minikube</a></p>
-</li>
-</ul>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc version</code></pre>
 </div>
-<div class="ulist tile">
-<div class="title"><a href="02-deploy.html" class="xref page">Deploying</a></div>
-<ul>
-<li>
-<p><a href="02-deploy.html#package" class="xref page">Package the Application</a></p>
-</li>
-<li>
-<p><a href="02-deploy.html#deploy" class="xref page">Deploy the Application</a></p>
-</li>
-</ul>
+</div>
+<div class="paragraph">
+<p>The output should show oc version &gt;=4.14:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Client Version: 4.14.1
+Kubernetes Version: v1.29.6+aba1e8d</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="getting-started.html">1. Getting Started</a></span>
+  <span class="prev"><a href="index.html">Validated Patterns Workshop</a></span>
+  <span class="next"><a href="02-deploy.html">2. Deploy Service</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
