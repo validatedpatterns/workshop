@@ -1,6 +1,6 @@
-name: template-tutorial
-title: Template Tutorial
-version: master
+name: vp-workshop
+title: Validated Patterns Workshop
+version: main
 nav:
   - modules/ROOT/nav.adoc
 
