@@ -11,10 +11,37 @@ include::main@vp-workshop:ROOT:partial$_about.adoc[]
 == Browse modules
 
 [.tile]
-.xref:01-setup.adoc[Get Started]
-* xref:01-setup.adoc#minikube[Minikube]
+.xref:patterns.adoc[Patterns]
 
 [.tile]
-.xref:02-deploy.adoc[Deploying]
-* xref:02-deploy.adoc#package[Package the Application]
-* xref:02-deploy.adoc#deploy[Deploy the Application]
+.xref:landscape.adoc[Pattern Landscape]
+
+[.tile]
+.xref:tiers.adoc[Pattern Tiers]
+
+[.tile]
+.xref:createConsumePatterns.adoc[Creating and Consuming Patterns]
+
+[.tile]
+.xref:secrets.adoc[Secrets Management]
+
+[.tile]
+.xref:selfContained.adoc[Self Contained Patterns]
+
+[.tile]
+.xref:gitopsRoughEdges.adoc[GitOps Rough Edges]
+
+[.tile]
+.xref:multipleClusters.adoc[Working with Multiple Clusters]
+
+[.tile]
+.xref:troubleshooting.adoc[Troubleshooting]
+
+[.tile]
+.xref:additionalTopics.adoc[Additional Resources]
+
+//jrickard commented out
+//[.tile]
+//.xref:02-deploy.adoc[Deploying]
+//* xref:02-deploy.adoc#package[Package the Application]
+//* xref:02-deploy.adoc#deploy[Deploy the Application]
