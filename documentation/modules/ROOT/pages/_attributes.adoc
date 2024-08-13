@@ -1,2 +1,7 @@
-:experimental:
+::moduledir: ..
+:cli: oc
+:branch: main
+:vp-gh-repo: https://github.com/validatedpatterns
+:rhocp: Red Hat OpenShift Container Platform
 :source-highlighter: highlightjs
+:experimental:

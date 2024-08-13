@@ -1,0 +1,19 @@
+[#prereqs]
+
+The following CLI tools are required for running the exercises in this workshop. Please have them installed and configured prior to beginning any of the workshop chapters.
+
+[cols="4*^,4*.",options="header,+attributes"]
+|===
+|**Tool**|**macOS**|**Fedora**|**windows**
+
+|`Git`
+| https://git-scm.com/download/mac[Download]
+| https://git-scm.com/download/linux[Download]
+| https://git-scm.com/download/win[Download]
+
+|`Podman`
+| https://podman.io/docs/installation#macos[Download]
+| `dnf install podman`
+| https://podman.io/docs/installation#windows[Download]
+
+|===

@@ -1,0 +1,11 @@
+= Setup
+include::_attributes.adoc[]
+
+== Prerequisites
+
+include::main@vp-workshop:ROOT:partial$_prereqs.adoc[]
+
+[#openshift]
+== Setup OpenShift
+
+include::main@vp-workshop:ROOT:partial$openshift.adoc[]

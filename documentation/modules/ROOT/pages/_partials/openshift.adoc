@@ -1,0 +1,31 @@
+[tabs, subs="attributes+,+macros"]	
+====	
+OpenShift::	
++	
+--	
+To run OpenShift4, you need to have one provisioned using https://try.openshift.com[try.openshift.com] or can use any existing OpenShift4 cluster.	
+Once you have your cluster, you can download the latest OpenShift client(oc) from https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/[here] and add to your path.	
+
+----	
+oc version 	
+----	
+
+You can check the OpenShift version using:
+
+[.console-input]
+[source,bash,subs="attributes+,+macros"]	
+----	
+oc version	
+----	
+
+The output should show oc version >=4.14:	
+
+[.console-output]
+[source,bash,subs="attributes+,+macros"]	
+----	
+Client Version: 4.14.1
+Kubernetes Version: v1.29.6+aba1e8d
+----	
+--
+
+====

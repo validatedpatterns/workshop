@@ -1,11 +1,11 @@
-= Welcome to Template Tutorial
-:page-layout: home
+= Welcome to the Validated Patterns Workshop
+:page-layout: default
 :!sectids:
 
 [.text-center.strong]
-== Publish Services to Kubernetes
+== Overview
 
-A Kubernetes tutorial to show how you can deploy a Java service to a Kubernetes cluster as it was a child game.
+include::main@vp-workshop:ROOT:partial$_about.adoc[]
 
 [.tiles.browse]
 == Browse modules
