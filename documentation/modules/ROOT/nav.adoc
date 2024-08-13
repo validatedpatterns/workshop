@@ -24,4 +24,10 @@
 * xref:gitopsRoughEdges.adoc[8. GitOps Rough Edges]
 * xref:gitopsRoughEdges.adoc[Exercises]
 
-* xref:additionalTopics.adoc[9. Additional Resources]
+* xref:multipleClusters.adoc[9. Working with Multiple Clusters]
+
+* xref:troubleshooting.adoc[10. Troubleshooting]
+
+* xref:helm.adoc[11. Helm for Fun and Profit]
+
+* xref:additionalTopics.adoc[12. Additional Resources]
