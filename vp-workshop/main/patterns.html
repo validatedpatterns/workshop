@@ -65,6 +65,12 @@
     <a class="nav-link" href="patterns.html">2. Introduction</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#goals">Validated Patterns Business Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#benefits">Benefits of Validated Patterns</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -151,14 +157,165 @@
   </div>
   <div class="content">
 <article class="doc">
+<div class="sect1">
+<h2 id="_topic_objectives"><a class="anchor" href="#_topic_objectives"></a>Topic Objectives</h2>
+<div class="sectionbody">
+<div id="objectives" class="paragraph">
+<p>In this topic  we will discuss:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is a GitOps Pattern?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain high level benefits provided by GitOps Patterns</p>
+</li>
+<li>
+<p>Discuss what is included in the patterns initiative</p>
+</li>
+<li>
+<p>Detail the difference between a community and validated patterns</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Who are GitOps Patterns for?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain the high level benefit for each persona</p>
+</li>
+<li>
+<p>Clarify the requirements to become validated</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Where can you keep up to date or point people to find more information?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what"><a class="anchor" href="#what"></a>What are Validated Patterns?</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>::moduledir: ..
-:cli: oc
-:branch: main
-:vp-gh-repo: <a href="https://github.com/validatedpatterns" class="bare">https://github.com/validatedpatterns</a>
-:rhocp: Red Hat OpenShift Container Platform
-:source-highlighter: highlightjs
-:experimental:</p>
+<p>Validated Patterns are an evolution of reference architectures. Each pattern is given a lifecycle when it is added to Red Hat&#8217;s continuous integration (CI) system because we&#8217;re testing against the latest version of operators, OpenShift releases and across multiple public cloud environments.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Linux-Penguin-Evolution-1.png" alt="evolution">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="goals"><a class="anchor" href="#goals"></a>Business Goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every organization is facing the need to transform itself into a digital business. It&#8217;s part of an evolution to help <strong>accelerate innovation</strong> by making application development faster - fueled with data insights, and enabled through technologies like containers, kubernetes and artifical intelligence/machine learning.</p>
+</div>
+<div class="paragraph">
+<p>In order to be successful, they know they must also look at how to be more <strong>operationally agile</strong> and <strong>efficient</strong> in order to quickly meet business needs. Hybrid-Cloud computing coupled with these new technologies is helping create new opportunities to achieve these goals.</p>
+</div>
+<div class="paragraph">
+<p>Validated Patterns are focused on customer solutions and Proof-Of-Concepts (POC&#8217;s).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-goals.png" alt="introduction goals">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="benefits"><a class="anchor" href="#benefits"></a>Benefits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Red Hat’s validated patterns are a collection of repositories that show a customers use case in the form of Kubernetes Resources (helm charts, kustomize, primitive objects) that describe an hybrid cloud stack declaratively and comprehensively; from its services down to the supporting infrastructure. Validated Patterns facilitate complex, highly reproducible deployments and are ideal for operating these deployments at scale using GitOps operational practices.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-pattern-benefits.png" alt="introduction pattern benefits">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a GitOps model to deliver the use case as code</p>
+</li>
+<li>
+<p>Use as a POC, modified to fit a particular need that you can evolve into a real deployment.</p>
+</li>
+<li>
+<p>Highly reproducible - great for operating at scale</p>
+</li>
+<li>
+<p>Open for collaboration, so anyone can suggest improvements, contribute to them or use them as the Git Repositories are all upstream</p>
+</li>
+<li>
+<p>Can be modified for customers needs.  If you would like to swap out a component, use Ceph Storage instead of S3, it is as easy as commenting out sections and including other repos.</p>
+</li>
+<li>
+<p>Tested.  Once made a validated pattern, the use case is included into Red Hat’s CI and continues to be tested across product versions while the pattern remains active.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="batteries"><a class="anchor" href="#batteries"></a>Batteries Included</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validated Patterns are a "batteries included" solution. This means that wherever you start with the patterns framework a core and configurable set of components are delivered out of the box. Reusability is a major theme that will be seen throughout this workshop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-batteriesIncluded.png" alt="introduction batteriesIncluded">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whotheyfor"><a class="anchor" href="#whotheyfor"></a>Who are patterns for?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Value provided by Validated Patterns is unique to each individual or organization. Generally speaking Patterns provide value to our:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-pattern-values.png" alt="introduction pattern values">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Customers - get going faster, reduce risk, time to value</p>
+</li>
+<li>
+<p>Sales - don&#8217;t spend time architecting, they have a tested use ccase for a base deployment. Though messaged for a specific vertical in some cases, they can be used across other verticals.</p>
+</li>
+<li>
+<p>Partners - free use of a defined architecutre that you can build a solution on top of. All the value to accelerate sales/deployments.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Can also be used as a way to promote your product (HashiCorp)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>GSIs or Consulting Services - predefined architectures, ready to deploy with minimal modifications. They can trust in the use-case as it is maintained across production version updates.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="getting-started.html">1. Getting Started</a></span>
