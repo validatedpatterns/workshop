@@ -1,4 +1,3 @@
-::moduledir: ..
 :cli: oc
 :branch: main
 :vp-gh-repo: https://github.com/validatedpatterns

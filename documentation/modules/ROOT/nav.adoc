@@ -2,6 +2,8 @@
 ** xref:getting-started.adoc#prereqs[Pre-Requisites]
 
 * xref:patterns.adoc[2. Introduction]
+** xref:patterns.adoc#objectives[Topic Objectives]
+** xref:patterns.adoc#goals[Validated Patterns Business Goals]
 ** xref:patterns.adoc#benefits[Benefits of Validated Patterns]
 ** xref:patterns.adoc#batteries[Batteries Included]
 ** xref:patterns.adoc#whotheyfor[Who are the Patterns for]
