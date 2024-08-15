@@ -1,0 +1,7 @@
+include::_attributes.adoc[]
+
+[#demo]
+The following demonstration is of the link:https://validatedpatterns/patterns/medical-diagnosis[medical-diagnosis] pattern. 
+
+
+

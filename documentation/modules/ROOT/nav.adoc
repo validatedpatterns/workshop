@@ -7,6 +7,7 @@
 ** xref:patterns.adoc#benefits[Benefits of Validated Patterns]
 ** xref:patterns.adoc#batteries[Batteries Included]
 ** xref:patterns.adoc#whotheyfor[Who are the Patterns for]
+* xref:patternsDemo.adoc[Demo]
 
 * xref:landscape.adoc[3. Existing Pattern Landscape]
 ** xref:landscape.adoc#website[Where to find existing Patterns]
