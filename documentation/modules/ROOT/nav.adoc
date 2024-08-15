@@ -37,7 +37,7 @@
 * xref:consumingPatterns.adoc[5. Validated Patterns]
 ** xref:consumingPatterns.adoc[Consuming a Validated Pattern]
 *** xref:consumingPatterns.adoc#objectives[Topic Objectives]
-*** xref:consumingPatterns.adoc#workflow[Deployment Workflow]
+*** xref:consumingPatterns.adoc#workflow[Validated Pattern Workflow]
 *** xref:consumingPatterns.adoc#layering[Solution Layering]
 *** xref:consumingPatterns.adoc#multiArgos[Multiple Argo's]
 *** xref:consumingPatterns-valuesFiles.adoc#values[Pattern Values Files]
@@ -45,13 +45,16 @@
 *** xref:patternsOperator.adoc#features[About the Patterns Operator]
 *** xref:patternsWrapperScript.adoc#about[About the Patterns.sh wrapper]
 *** xref:patternsWrapperScript.adoc#help[Wrapper Help]
+*** xref:repoFork.adoc#about[To Fork or Not to Fork]
 *** xref:consumingPatterns.adoc#exercises[Exercises]
-** xref:creatingPatterns.adoc[Creating Validated Patterns]
-** xref:creatingPatterns.adoc#objectives[Topic Objectives]
-** xref:creatingPatterns.adoc#technology[Core Products and Technology]
-*** xref:creatingPatterns.adoc#exercises[Exercies]
-** xref::consumingPatterns.adoc[Consuming Patterns]
-*** xref:consumingPatterns.adoc#exercises[Exercises]
+
+** xref:creatingPatterns.adoc[Creating a Validated Pattern]
+*** xref:creatingPatterns.adoc#objectives[Topic Objectives]
+*** xref:creatingPatterns.adoc#common[Understanding Common]
+*** xref:creatingPatterns.adoc#requirements[Pattern Requirements]
+*** xref:creatingPatterns.adoc#creating[Creation Process]
+*** xref:creatingPatterns.adoc#exercises[Exercises]
+
 
 //Chapter 6 - Secrets Management
 * xref:secrets.adoc[6. Secrets Management]
