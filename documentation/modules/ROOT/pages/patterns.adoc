@@ -1,9 +1,8 @@
-== Topic Objectives
+== Introduction
+
 include::_attributes.adoc[]
 
-[#objectives]
-
-In this topic  we will discuss:
+include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
 * What is a Validated Pattern?
 ** Explain high level benefits provided by Validated Patterns

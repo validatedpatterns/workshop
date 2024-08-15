@@ -1,3 +1,9 @@
+== GitOps Rough Edges
+
 include::_attributes.adoc[]
+
+include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
+
+
 
 [#website]

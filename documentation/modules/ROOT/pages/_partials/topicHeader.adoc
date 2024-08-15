@@ -1,1 +1,4 @@
+== Topic Objectives
+
+[#objectives]
 In this topic we will discuss:

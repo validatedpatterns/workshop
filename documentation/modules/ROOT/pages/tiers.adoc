@@ -2,16 +2,11 @@
 
 include::_attributes.adoc[]
 
-
-== Objectives
-[#objectives]
-
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
 * What are the Validated Pattern Maintenance Tiers?
 ** What's the difference between the tiers?
 * Additional information on mainteance tiers and the pattern support policy
-
 
 == Tiers
 [#about]

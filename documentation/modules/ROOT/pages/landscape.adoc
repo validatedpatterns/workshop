@@ -1,8 +1,6 @@
-== Topic Objectives
+== Pattern Landscape
 
 include::_attributes.adoc[]
-
-[#objectives]
 
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
