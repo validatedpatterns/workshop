@@ -6,10 +6,6 @@ OpenShift::
 To run OpenShift4, you need to have one provisioned using https://try.openshift.com[try.openshift.com] or can use any existing OpenShift4 cluster.	
 Once you have your cluster, you can download the latest OpenShift client(oc) from https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/[here] and add to your path.	
 
-----	
-oc version 	
-----	
-
 You can check the OpenShift version using:
 
 [.console-input]
