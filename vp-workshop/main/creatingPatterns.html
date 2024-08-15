@@ -347,12 +347,134 @@
 </li>
 </ul>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Core Concepts</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Creating is Extending</strong> We never really create a new pattern from zero. Instead we extend our basic pattern using artifacts that we have developed along the way</p>
+</li>
+<li>
+<p><strong>Artifacts</strong> Artifacts can include Helm Charts, Kustomize manifests, or plain Kubernetes manifests</p>
+</li>
+<li>
+<p><strong>Moving Artifacts into the Validated Patterns framework</strong> Many artifacts require conversion to Helm chart templates and parameterizing certain values</p>
+</li>
+<li>
+<p><strong>Helm</strong> Helm is a kubernetes package manager that allows you to define, install and manage kubernetes applications as reusable packages called charts</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="common"><a class="anchor" href="#common"></a>Understanding common</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>What&#8217;s the role of the <strong>common</strong> repository?
+* The core components that make up the Validated Patterns framework are contained in the common repository
+* Including:
+<strong> OpenShift GitOps configurations
+</strong> RHACM configuration and Global Policies
+<strong>* Support for </strong>clusterGroup<strong> and </strong>GitOps<strong> policies
+</strong> Validated Pattern build scripts and Makefiles
+<strong> Secrets Management (Hashicorp Vault)
+</strong> Operator CRDs and other assets
+** Various utility scripts</p>
+</div>
+<div class="paragraph">
+<p>What&#8217;s in common?</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The common repository is where all the common manifests for the Validated Patterns framework live
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>acm</strong> - contains the helm charts, which contains policies and is used to configure the deployment of the Red Hat Advanced Cluster Management for Kubernetes</p>
+</li>
+<li>
+<p><strong>clusterGroup</strong> - contains the helm charts used to create namespaces, subscriptions, Argo Project and Applications described in values files. THis is the seed for all the patterns.</p>
+</li>
+<li>
+<p><strong>operator-install</strong> - contains the helm chart used by the Validated Patterns operator to create the openshift-gitops component, creating the initial ArgoCD applications for Validated Patterns.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">common
+├── acm
+├── ansible
+├── Changes.md
+├── clustergroup
+├── common -&gt; .
+├── examples
+├── golang-external-secrets
+├── hashicorp-vault
+├── LICENSE
+├── Makefile
+├── letsencrypt
+├── operator-install
+├── README.md
+├── reference-output.yaml
+├── scripts
+├── super-linter.log
+├── tests
+└── values-global.yaml</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ansible</strong> - this directory contains the ansible roles and modules that support the secrets management for a pattern</p>
+</li>
+<li>
+<p><strong>hashicorp-vault</strong> - contains the helm chart for HashiCorp Vault</p>
+</li>
+<li>
+<p><strong>scripts</strong> - contains utility scripts used by the Validated Patterns Framework</p>
+</li>
+<li>
+<p><strong>golang-external-secrets</strong> - Helm chart for the External Secrets Operator</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_whats_next_for_common"><a class="anchor" href="#_whats_next_for_common"></a>What&#8217;s next for common?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We are in the very early stages of moving the helm charts in common into a public Helm repository</p>
+</li>
+<li>
+<p>Deploying our patterns with multi-source enabled which allows us to use multiple sources for values, which will help reduce the need to have all the charts in the repo</p>
+</li>
+<li>
+<p>Continue to maintain Makefiles, Ansible scripts and other tools in this repo in support of deploying patterns</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
