@@ -34,22 +34,33 @@
 ** xref:tiers.adoc#resources[Additional Resources]
 
 // Chapter 5 - Creating and Consuming Patterns
-* xref:createConsumePatterns.adoc[5. Creating and Consuming Patterns]
-* xref:createConsumePatterns.adoc[Exercises]
+* xref:creatingPatterns.adoc[5. Creating Validated Patterns]
+** xref:creatingPatterns.adoc#objectives[Topic Objectives]
+** xref:creatingPatterns.adoc#technology[Core Products and Technology]
+*** xref:creatingPatterns.adoc#exercises[Exercies]
+** xref::consumingPatterns.adoc[Consuming Patterns]
+*** xref:consumingPatterns.adoc#exercises[Exercises]
 
+//Chapter 6 - Secrets Management
 * xref:secrets.adoc[6. Secrets Management]
 * xref:secrets.adoc[Exercises]
 
+//Chapter 7 - SelfContained Pattern Resources
 * xref:selfContained.adoc[7. Self Contained Patterns]
 * xref:selfContained.adoc[Exercises]
 
+//Chapter 8 - GitOps Rough Edges
 * xref:gitopsRoughEdges.adoc[8. GitOps Rough Edges]
 * xref:gitopsRoughEdges.adoc[Exercises]
 
+//Chapter 9 - Working with Multiple Clusters 
 * xref:multipleClusters.adoc[9. Working with Multiple Clusters]
 
+//Chapter 10 - Troubleshooting
 * xref:troubleshooting.adoc[10. Troubleshooting]
 
+//Chapter 11 - Helm for Fun and Profit
 * xref:helm.adoc[11. Helm for Fun and Profit]
 
+//Appendix - Additional Resources
 * xref:additionalTopics.adoc[12. Additional Resources]
