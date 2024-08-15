@@ -34,7 +34,14 @@
 ** xref:tiers.adoc#resources[Additional Resources]
 
 // Chapter 5 - Creating and Consuming Patterns
-* xref:creatingPatterns.adoc[5. Creating Validated Patterns]
+* xref:consumingPatterns.adoc[5. Validated Patterns]
+** xref:consumingPatterns.adoc[Consuming a Validated Pattern]
+*** xref:consumingPatterns.adoc#objectives[Topic Objectives]
+*** xref:consumingPatterns.adoc#workflow[Deployment Workflow]
+*** xref:consumingPatterns.adoc#layering[Solution Layering]
+*** xref:consumingPatterns.adoc#multiArgos[Multiple Argo's]
+*** xref:consumingPatterns.adoc#exercises[Exercies]
+** xref:creatingPatterns.adoc[Creating Validated Patterns]
 ** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 ** xref:creatingPatterns.adoc#technology[Core Products and Technology]
 *** xref:creatingPatterns.adoc#exercises[Exercies]

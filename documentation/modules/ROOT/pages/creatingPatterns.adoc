@@ -11,6 +11,9 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 * Understand our base pattern
 * To fork or not to fork
 
-== Core Products and Technologies
-[#technology]
+== Validated Pattern workflow
+[#workflow]
 
+Let's dive into what happens when we deploy a pattern! Take a look at the following graphic to see what is deployed on the `hub` clusterGroup cluster.
+
+image::creating-vpWorkflow-managedCluster.png[]
