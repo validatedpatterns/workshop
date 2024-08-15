@@ -8,7 +8,7 @@
 include::main@vp-workshop:ROOT:partial$_about.adoc[]
 
 [.tiles.browse]
-== Browse modules
+//== Browse modules
 
 [.tile]
 .xref:patterns.adoc[Patterns]
