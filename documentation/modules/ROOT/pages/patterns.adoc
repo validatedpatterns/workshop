@@ -52,7 +52,15 @@ image::introduction-pattern-benefits.png[]
 
 == Batteries Included 
 
-Validated Patterns are a "batteries included" solution. This means that wherever you start with the patterns framework a core and configurable set of components are delivered out of the box. Reusability is a major theme that will be seen throughout this workshop. 
+Validated Patterns are a "batteries included" solution. This means that wherever you start with the patterns framework a core and configurable set of components are delivered out of the box. 
+
+Take a look at the following graphic - each Validated Pattern (use-case dependent) consumes these technologies. The modularity of the framework allows us to add/remove resources to meet the requirements of the use-case. If a pattern only deploys on a single cluster, there is no need to deploy {rhacm}, therefore we can remove the declarations for {rhacm} in the `values-hub.yaml`.
+
+image::introduction-techSlide.png[]
+
+IMPORTANT: Reusability is a major theme that will be seen throughout this workshop.
+
+When we dive into these core technologies we start to see the low-level technology being used throughout the framework
 
 image::introduction-batteriesIncluded.png[]
 
