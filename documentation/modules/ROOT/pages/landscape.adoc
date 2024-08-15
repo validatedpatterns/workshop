@@ -1,3 +1,15 @@
+== Topic Objectives
+
 include::_attributes.adoc[]
+
+[#objectives]
+
+include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
+
+* What Validated Patterns are available
+** What business problems are being addressed?
+** Whethere VPs are only applicable for the vertical industry the demo was created to show
+** How are they presented to custoemrs
+* Working with Partners
 
 [#website]
