@@ -1,20 +1,37 @@
+// Chapter 1 - Getting Started
 * xref:getting-started.adoc[1. Getting Started]
 ** xref:getting-started.adoc#prereqs[Pre-Requisites]
 
+// Chapter 2 - Introduction to Patterns
 * xref:patterns.adoc[2. Introduction]
 ** xref:patterns.adoc#objectives[Topic Objectives]
 ** xref:patterns.adoc#goals[Validated Patterns Business Goals]
 ** xref:patterns.adoc#benefits[Benefits of Validated Patterns]
 ** xref:patterns.adoc#batteries[Batteries Included]
 ** xref:patterns.adoc#whotheyfor[Who are the Patterns for]
-* xref:patternsDemo.adoc[Demo]
+** xref:patternsDemo.adoc[Demo]
 
+// Chapter 3 - Pattern Landscape
 * xref:landscape.adoc[3. Existing Pattern Landscape]
+** xref:landscape.adoc#objectives[Topic Objectives]
+** xref:landscape.adoc#patterns[Available Patterns]
 ** xref:landscape.adoc#website[Where to find existing Patterns]
+** xref:landscape.adoc#partners[Working with Partners]
+*** xref:landscape.adoc#intel[Intel]
+**** xref:landscape.adoc#intel-mcgo[Intel MultiCloud GitOps]
+**** xref:landscape.adoc#intel-md[Intel Medical Diagnosis]
+*** xref:landscape.adoc[Portworx]
+**** xref:landscape.adoc#pwx-mcgo[Portworx]
+*** xref:landscape.adoc[Cisco]
+**** xref:landscape.adoc#cisco-pwx-mcgo[Cisco]
+*** xref:landscape.adoc[Veeam/Kasten]
+*** xref:landscape.adoc#veeam-mcgo[Veeam/Kasten]
 
+// Chapter 4 - Pattern Maintenance Tiers
 * xref:tiers.adoc[4. Pattern Tiers]
 ** xref:tiers.adoc#tiers[Pattern Tiers]
 
+// Chapter 5 - Creating and Consuming Patterns
 * xref:createConsumePatterns.adoc[5. Creating and Consuming Patterns]
 * xref:createConsumePatterns.adoc[Exercises]
 
