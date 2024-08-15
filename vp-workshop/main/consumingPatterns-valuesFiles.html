@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Deploy Service :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/02-deploy.html">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/consumingPatterns-valuesFiles.html">
+    <link rel="prev" href="consumingPatterns.html">
+    <link rel="next" href="consumingPatterns.html#exercises">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -194,10 +196,10 @@
     <a class="nav-link" href="consumingPatterns.html#multiArgos">Multiple Argo&#8217;s</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="consumingPatterns-valuesFiles.html#values">Pattern Values Files</a>
+    <a class="nav-link" href="#values">Pattern Values Files</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="consumingPatterns-valuesFiles.html#valuesSecret">Pattern Secret Values Template</a>
+    <a class="nav-link" href="#valuesSecret">Pattern Secret Values Template</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="consumingPatterns.html#exercises">Exercises</a>
@@ -303,77 +305,114 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="02-deploy.html">Deploy Service</a></li>
+    <li><a href="consumingPatterns.html">5. Validated Patterns</a></li>
+    <li><a href="consumingPatterns.html">Consuming a Validated Pattern</a></li>
+    <li><a href="#values">Pattern Values Files</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/02-deploy.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/consumingPatterns-valuesFiles.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Deploy Service</h1>
 <div class="sect1">
-<h2 id="service"><a class="anchor" href="#service"></a>The Service</h2>
+<h2 id="values"><a class="anchor" href="#values"></a>Values Files</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The code:</p>
+<p>A variety of values files are used in the Patterns framework - but the three most common you will come across will be:</p>
 </div>
-<div class="listingblock lines_7 console-input">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Values File Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purpose</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>values-&lt;clustergroup&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is where the bill of materials for the pattern resides. Applications and Products deployed by the pattern are driven from this values file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>values-global</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used for setting values across all clusters and resources in the pattern. The values are used by Helm charts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>values-secret</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stored locally and <code>NOT</code> in git, this template allows you declare secrets to be distributed to the cluster</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In addition to the most common values files, we have also implemented the ability to use specialized values files so the same charts can be used to support multiple cloud providers, OpenShift versions and different environments.</p>
+</div>
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class Main {
-
-    public static void main(String[] args) {
-
-    }
-
-}
-
-./mvnw compile</code></pre>
+<img src="_images/consuming-valuesSpecializedTypes.png" alt="consuming valuesSpecializedTypes">
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="package"><a class="anchor" href="#package"></a>Packaging the Service</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>You can package the next bash script:</p>
+<p>When it comes to values and especially values in Helm - order matters. We have to take care when defining values that we don&#8217;t accidentally overwrite or remove a value that we need.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/consuming-patternValuesFiles.png" alt="consuming patternValuesFiles">
+</div>
+</div>
+<div class="paragraph">
+<p>If we review the <code>values-hub.yaml</code> we can see where and how resources are declared:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#!/bin/sh
-echo "Hello World"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">clusterGroup:
+  name: hub
+
+namespaces:
+  - open-cluster-management
+  - vault
+  - golang-external-secrets
+  - quay-enterprise
+
+subscriptions:
+  - name: advanced-cluster-management
+    namespace: open-cluster-management
+
+applications:
+  - name: quay-registry
+    namespace: quay-enterprise
+    project: opp
+    path: charts/hub/quay</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="deploy"><a class="anchor" href="#deploy"></a>Deploy the Service</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>And then you can deploy the service and execute commands inside:</p>
-</div>
-<div class="paragraph">
-<p>Check that the pod is up and running:</p>
-</div>
-<div class="listingblock lines_space console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl get pods</code></pre>
-</div>
-</div>
-<div class="listingblock console-output">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">NAME                        READY   STATUS    RESTARTS   AGE
-apps   1/1     Running   0          5s</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then let&#8217;s go into the running pod to execute some commands:</p>
-</div>
-<div class="listingblock console-input">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">kubectl exec -ti apps /bin/bash</code></pre>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purpose</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>namespaces</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List (or map) of namespaces expected to be created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>subscriptions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of operators to be deployed on the cluster. If necessary, we can override default values for namespace, source, channel..etc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>applications</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource consumed by ArgoCD to define an application to be deployed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>projects</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource consumed by ArgoCD to group resources and configurations together</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -381,13 +420,81 @@ apps   1/1     Running   0          5s</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Change the pod name with your pod name.
+Sometimes we may need to override a default - an example of this is needing to create an OperatorGroup that doesn&#8217;t monitor namespaces - check out <a href="https://validatedpatterns.io/blog/2023-12-15-understanding-namespaces/">this blog</a> to learn how!
 </td>
 </tr>
 </table>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="valuesSecret"><a class="anchor" href="#valuesSecret"></a>values-secret template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each pattern has a template in the root of the repository named <code>values-secret.template.yaml</code> that provides the secrets required for the pattern to deploy. Not all patterns require secrets, so it is very likely that the generic secrets for <code>config-demo</code> and <code>hello-world</code> exist.</p>
+</div>
+<div class="paragraph">
+<p>In order to define custom secrets that aren&#8217;t stored in git - we need ot copy the template to our <code>$HOME</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>INFORMATION: The following examples assume you have forked <a href="https://github.com/validatedpatterns/multicloud-gitops">multi-cloud gitops</a> to your GitHub organization.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp values-secret.yaml.template ~/values-secret-multicloud-gitops.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at the contents of the file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># A more formal description of this format can be found here:
+# https://github.com/validatedpatterns/common/tree/main/ansible/roles/vault_utils#values-secret-file-format
+
+version: "2.0"
+# Ideally you NEVER COMMIT THESE VALUES TO GIT (although if all passwords are
+# automatically generated inside the vault this should not really matter)
+
+secrets:
+  - name: config-demo
+    vaultPrefixes:
+    - global
+    fields:
+    - name: secret
+      onMissingValue: generate
+      vaultPolicy: validatedPatternDefaultPolicy
+
+  # If you use clusterPools you will need to uncomment the following lines
+  #- name: aws
+  #  fields:
+  #  - name: aws_access_key_id
+  #    ini_file: ~/.aws/credentials
+  #    ini_section: default
+  #    ini_key: aws_access_key_id
+  #  - name: aws_secret_access_key
+  #    ini_file: ~/.aws/credentials
+  #    ini_key: aws_secret_access_key
+  #- name: publickey
+  #  fields:
+  #  - name: content
+  #    path: ~/.ssh/id_rsa.pub
+  #- name: privatekey
+  #  fields:
+  #  - name: content
+  #    path: ~/.ssh/id_rsa
+  #- name: openshiftPullSecret
+  #  fields:
+  #  - name: content
+  #    path: ~/.pullsecret.json</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="consumingPatterns.html">5. Validated Patterns</a></span>
+  <span class="next"><a href="consumingPatterns.html#exercises">Exercises</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
