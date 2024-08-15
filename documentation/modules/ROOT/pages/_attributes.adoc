@@ -1,6 +1,9 @@
 :cli: oc
 :branch: main
 :vp-gh-repo: https://github.com/validatedpatterns
+:rhacm: Red Hat Advanced Cluster Management for Kubernetes
+:rhacs: Red Hat Advanced Cluster Security for Kubernetes
 :rhocp: Red Hat OpenShift Container Platform
+:rh-gitops: Red Hat OpenShift GitOps
 :source-highlighter: highlightjs
 :experimental:
