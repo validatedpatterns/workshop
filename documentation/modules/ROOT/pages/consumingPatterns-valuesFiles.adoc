@@ -1,0 +1,123 @@
+include::_attributes.adoc[]
+
+[#values]
+== Values Files
+
+A variety of values files are used in the Patterns framework - but the three most common you will come across will be:
+
+|===
+|**Values File Name**|**Purpose**
+| `values-<clustergroup>`
+| This is where the bill of materials for the pattern resides. Applications and Products deployed by the pattern are driven from this values file.
+|`values-global`
+| Used for setting values across all clusters and resources in the pattern. The values are used by Helm charts.
+|`values-secret`
+| Stored locally and `NOT` in git, this template allows you declare secrets to be distributed to the cluster
+
+|===
+
+In addition to the most common values files, we have also implemented the ability to use specialized values files so the same charts can be used to support multiple cloud providers, OpenShift versions and different environments.
+
+//Custom values files
+image::consuming-valuesSpecializedTypes.png[]
+
+When it comes to values and especially values in Helm - order matters. We have to take care when defining values that we don't accidentally overwrite or remove a value that we need. 
+
+//What drives the work
+image::consuming-patternValuesFiles.png[]
+
+If we review the `values-hub.yaml` we can see where and how resources are declared:
+
+[source,yaml,subs="+macros,attributes+"]
+----
+clusterGroup:
+  name: hub
+
+namespaces:
+  - open-cluster-management
+  - vault
+  - golang-external-secrets
+  - quay-enterprise
+
+subscriptions:
+  - name: advanced-cluster-management
+    namespace: open-cluster-management
+
+applications:
+  - name: quay-registry
+    namespace: quay-enterprise
+    project: opp
+    path: charts/hub/quay
+----
+
+|===
+|**Key**|**Purpose**
+| `namespaces`
+| List (or map) of namespaces expected to be created
+|`subscriptions`
+| List of operators to be deployed on the cluster. If necessary, we can override default values for namespace, source, channel..etc
+|`applications`
+| Resource consumed by ArgoCD to define an application to be deployed
+|`projects`
+| Resource consumed by ArgoCD to group resources and configurations together
+
+|===
+
+NOTE: Sometimes we may need to override a default - an example of this is needing to create an OperatorGroup that doesn't monitor namespaces - check out link:https://validatedpatterns.io/blog/2023-12-15-understanding-namespaces/[this blog] to learn how!
+
+[#valuesSecret]
+== values-secret template
+
+Each pattern has a template in the root of the repository named `values-secret.template.yaml` that provides the secrets required for the pattern to deploy. Not all patterns require secrets, so it is very likely that the generic secrets for `config-demo` and `hello-world` exist.
+
+In order to define custom secrets that aren't stored in git - we need ot copy the template to our `$HOME` directory.
+
+INFORMATION: The following examples assume you have forked link:https://github.com/validatedpatterns/multicloud-gitops[multi-cloud gitops] to your GitHub organization.
+
+[source,bash]
+----
+cp values-secret.yaml.template ~/values-secret-multicloud-gitops.yaml
+----
+
+Let's take a look at the contents of the file: 
+[source,yaml]
+----
+# A more formal description of this format can be found here:
+# https://github.com/validatedpatterns/common/tree/main/ansible/roles/vault_utils#values-secret-file-format
+
+version: "2.0"
+# Ideally you NEVER COMMIT THESE VALUES TO GIT (although if all passwords are
+# automatically generated inside the vault this should not really matter)
+
+secrets:
+  - name: config-demo
+    vaultPrefixes:
+    - global
+    fields:
+    - name: secret
+      onMissingValue: generate
+      vaultPolicy: validatedPatternDefaultPolicy
+
+  # If you use clusterPools you will need to uncomment the following lines
+  #- name: aws
+  #  fields:
+  #  - name: aws_access_key_id
+  #    ini_file: ~/.aws/credentials
+  #    ini_section: default
+  #    ini_key: aws_access_key_id
+  #  - name: aws_secret_access_key
+  #    ini_file: ~/.aws/credentials
+  #    ini_key: aws_secret_access_key
+  #- name: publickey
+  #  fields:
+  #  - name: content
+  #    path: ~/.ssh/id_rsa.pub
+  #- name: privatekey
+  #  fields:
+  #  - name: content
+  #    path: ~/.ssh/id_rsa
+  #- name: openshiftPullSecret
+  #  fields:
+  #  - name: content
+  #    path: ~/.pullsecret.json
+----

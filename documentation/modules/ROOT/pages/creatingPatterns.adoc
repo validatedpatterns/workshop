@@ -16,4 +16,4 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
 Let's dive into what happens when we deploy a pattern! Take a look at the following graphic to see what is deployed on the `hub` clusterGroup cluster.
 
-image::creating-vpWorkflow-managedCluster.png[]
+//image::creating-vpWorkflow-managedCluster.png[]
