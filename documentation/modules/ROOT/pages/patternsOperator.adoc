@@ -15,4 +15,3 @@ IMPORTANT: `make load-secrets` is required when deploying the operator via OpenS
 image::vp-operator-community.png[Community Operator]
 
 image::olm-vp-operator.png[OLM]
-
