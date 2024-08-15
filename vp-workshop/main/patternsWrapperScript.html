@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the Validated Patterns Workshop :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/index.html">
-    <link rel="next" href="getting-started.html">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/patternsWrapperScript.html">
+    <link rel="prev" href="patternsOperator.html#features">
+    <link rel="next" href="consumingPatterns.html#exercises">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -204,10 +205,10 @@
     <a class="nav-link" href="patternsOperator.html#features">About the Patterns Operator</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="patternsWrapperScript.html#about">About the Patterns.sh wrapper</a>
+    <a class="nav-link" href="#about">About the Patterns.sh wrapper</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="patternsWrapperScript.html#help">Wrapper Help</a>
+    <a class="nav-link" href="#help">Wrapper Help</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="consumingPatterns.html#exercises">Exercises</a>
@@ -309,52 +310,136 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="index.html">Welcome to the Validated Patterns Workshop</a></li>
+    <li><a href="consumingPatterns.html">5. Validated Patterns</a></li>
+    <li><a href="consumingPatterns.html">Consuming a Validated Pattern</a></li>
+    <li><a href="#about">About the Patterns.sh wrapper</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/patternsWrapperScript.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Welcome to the Validated Patterns Workshop</h1>
-<div class="sect1 text-center strong">
-<h2>Overview</h2>
-<div class="sectionbody">
-<div id="vp-workshop-all-local" class="paragraph">
-<p><strong>Reference Architectures with Added Value</strong></p>
-</div>
-<div class="paragraph">
-<p>Validated Patterns are an evolution of how you deploy and manage applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (ci) over your application.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2>About the Validated Patterns Workshop</h2>
+<h2 id="_using_the_pattern_sh_script"><a class="anchor" href="#_using_the_pattern_sh_script"></a>Using the pattern.sh script</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The goal of this workshop is to immerse the participant in foundational knowledge for creating, using and extending a GitOps pattern with the Validated Patterns framework. In this workshop participants will:</p>
+<div id="about" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./pattern.sh
+
+       1          Welcome to the Validate Pattern utility container
+      111         It contains all the needed components to install a pattern.
+     1   1
+    111 111       Please run the following for more information:
+   1       1
+  111     111       ./pattern.sh make help
+ 1   1   1   1
+111 111 111 111</code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Learn GitOps fundamentals</p>
+<p>Used to deploy the pattern from the command-line</p>
 </li>
 <li>
-<p>Deploy a Validated Pattern</p>
+<p>Deploys the operator with a repository and branch from the local clone of the repo</p>
 </li>
 <li>
-<p>Extend an existing Validated Pattern</p>
+<p>Provides a way to invoke the container which has all of the pre-requisites software installed (e.g. python, ansible, make)</p>
+</li>
+<li>
+<p>Improved User Experience when deploying Patterns from the command line</p>
+</li>
+<li>
+<p>When installing a pattern use:</p>
 </li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./pattern.sh make install</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When loading secrets into your deployment</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>./pattern.sh make load-secrets</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+pattern.sh uses your origin remote and current branch. To change the branch after a deployment, run <code>make install</code> in the new branch
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="help"><a class="anchor" href="#help"></a>Help Menu</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>pattern.sh</code> comes with a help menu, to use it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ./pattern.sh make help
+
+Usage:
+  make &lt;target&gt;
+
+Pattern tasks
+  install                              installs the pattern and loads the secrets
+  post-install                         Post-install tasks
+
+Pattern Common Tasks
+  help                                 This help message
+  show                                 show the starting template without installing it
+  operator-deploy operator-upgrade     runs helm install
+  uninstall                            runs helm uninstall
+  load-secrets                         loads the secrets into the backend determined by values-global setting
+  legacy-load-secrets                  loads the secrets into vault (only)
+  secrets-backend-vault                Edits values files to use default Vault+ESO secrets config
+  secrets-backend-kubernetes           Edits values file to use Kubernetes+ESO secrets config
+  secrets-backend-none                 Edits values files to remove secrets manager + ESO
+  load-iib                             CI target to install Index Image Bundles
+
+Validation Tasks
+  validate-origin                      verify the git origin is available
+  validate-cluster                     Do some cluster validations before installing
+  validate-schema                      validates values files against schema in common/clustergroup
+  validate-prereq                      verify pre-requisites
+  argo-healthcheck                     Checks if all argo applications are synced
+
+Test and Linters Tasks
+  test                                 run helm tests
+  helmlint                             run helm lint
+  kubeconform                          run helm kubeconform
+  super-linter                         Runs super linter locally
+  ansible-lint                         run ansible lint on ansible/ folder
+  ansible-unittest                     run ansible unit test</code></pre>
+</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="getting-started.html">1. Getting Started</a></span>
+  <span class="prev"><a href="patternsOperator.html#features">About the Patterns Operator</a></span>
+  <span class="next"><a href="consumingPatterns.html#exercises">Exercises</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

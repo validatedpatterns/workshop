@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the Validated Patterns Workshop :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/index.html">
-    <link rel="next" href="getting-started.html">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/patternsOperator.html">
+    <link rel="prev" href="consumingPatterns-valuesFiles.html#values">
+    <link rel="next" href="patternsWrapperScript.html#about">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -201,7 +202,7 @@
     <a class="nav-link" href="consumingPatterns-valuesFiles.html#valuesSecret">Pattern Secret Values Template</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="patternsOperator.html#features">About the Patterns Operator</a>
+    <a class="nav-link" href="#features">About the Patterns Operator</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="patternsWrapperScript.html#about">About the Patterns.sh wrapper</a>
@@ -309,52 +310,71 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="index.html">Welcome to the Validated Patterns Workshop</a></li>
+    <li><a href="consumingPatterns.html">5. Validated Patterns</a></li>
+    <li><a href="consumingPatterns.html">Consuming a Validated Pattern</a></li>
+    <li><a href="#features">About the Patterns Operator</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/patternsOperator.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Welcome to the Validated Patterns Workshop</h1>
-<div class="sect1 text-center strong">
-<h2>Overview</h2>
-<div class="sectionbody">
-<div id="vp-workshop-all-local" class="paragraph">
-<p><strong>Reference Architectures with Added Value</strong></p>
-</div>
-<div class="paragraph">
-<p>Validated Patterns are an evolution of how you deploy and manage applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (ci) over your application.</p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2>About the Validated Patterns Workshop</h2>
+<h2 id="_validated_patterns_operator"><a class="anchor" href="#_validated_patterns_operator"></a>Validated Patterns Operator</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The goal of this workshop is to immerse the participant in foundational knowledge for creating, using and extending a GitOps pattern with the Validated Patterns framework. In this workshop participants will:</p>
-</div>
+<div class="sect2">
+<h3 id="features"><a class="anchor" href="#features"></a>Validated Operator Features</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Learn GitOps fundamentals</p>
+<p>Available as a community operator in Operator Hub</p>
 </li>
 <li>
-<p>Deploy a Validated Pattern</p>
+<p>Interrogates the cluster and uses information to personalize the pattern with argo/helm values</p>
 </li>
 <li>
-<p>Extend an existing Validated Pattern</p>
+<p>Allows you to pick a repository for the pattern and to select a branch version (e.g. <code>stable</code>)</p>
+</li>
+<li>
+<p>Deploys OpenShift GitOps with the correct <code>values-hub</code></p>
+</li>
+<li>
+<p>Regardless of how you deploy the pattern, the operator is still in use</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>make load-secrets</code> is required when deploying the operator via OpenShift Console.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vp-operator-community.png" alt="Community Operator">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/olm-vp-operator.png" alt="OLM">
+</div>
+</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="getting-started.html">1. Getting Started</a></span>
+  <span class="prev"><a href="consumingPatterns-valuesFiles.html#values">Pattern Values Files</a></span>
+  <span class="next"><a href="patternsWrapperScript.html#about">About the Patterns.sh wrapper</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
