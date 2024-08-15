@@ -5,5 +5,7 @@
 :rhacs: Red Hat Advanced Cluster Security for Kubernetes
 :rhocp: Red Hat OpenShift Container Platform
 :rh-gitops: Red Hat OpenShift GitOps
+:eso: External Secrets Operator
+:vault: HashiCorp Vault
 :source-highlighter: highlightjs
 :experimental:
