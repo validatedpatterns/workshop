@@ -48,6 +48,7 @@
 *** xref:repoFork.adoc#about[To Fork or Not to Fork]
 *** xref:consumingPatterns.adoc#exercises[Exercises]
 
+// Also Chapter 5 - Breaking up for readability
 ** xref:creatingPatterns.adoc[Creating a Validated Pattern]
 *** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 *** xref:creatingPatterns.adoc#common[Understanding Common]
@@ -73,14 +74,14 @@
 ** xref:secrets-loading.adoc#secretExamples[Secret Template Examples]
 *** xref:secrets-loading.adoc#certificate[Loading a Certificate]
 *** xref:secrets-loading.adoc#awscreds[Loading AWS Credentials]
-
-
-
 ** xref:secrets.adoc[Exercises]
 
 //Chapter 7 - SelfContained Pattern Resources
 * xref:selfContained.adoc[7. Self Contained Patterns]
-* xref:selfContained.adoc[Exercises]
+** xref:selfContained.adoc#objectives[Topic Objectives]
+** xref:selfContained.adoc#contained[Self Contained?]
+** xref:selfContained.adoc#thoughts[Additional Thoughts]
+** xref:selfContained.adoc[Exercises]
 
 //Chapter 8 - GitOps Rough Edges
 * xref:gitopsRoughEdges.adoc[8. GitOps Rough Edges]
@@ -97,3 +98,13 @@
 
 //Appendix - Additional Resources
 * xref:additionalTopics.adoc[12. Additional Resources]
+
+// Keeping track of what's unaccounted for  in toc
+// Handling Cluster Domains 
+* xref:clusterDomains.adoc[xx. Handling Cluster Domains]
+
+// MultiSource
+* xref:multisource.adoc[xx. Multi Source Patterns]
+
+// Imperative Framework
+* xref:imperative.adoc[xx. Imperative Framework]
