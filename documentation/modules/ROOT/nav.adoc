@@ -58,6 +58,18 @@
 //Chapter 6 - Secrets Management
 * xref:secrets.adoc[6. Secrets Management]
 ** xref:secrets.adoc#objectives[Topic Objectives]
+** xref:secrets.adoc#secretsGitops[Secrets Management and GitOps]
+** xref:pattern-secrets-management.adoc#esoVault[ESO and Vault]
+** xref:pattern-secrets-management.adoc#approaches[Approaches]
+*** xref:pattern-secrets-management.adoc#encryptedSecrets[Encrypted Secrets]
+*** xref:pattern-secrets-management.adoc#secretReferences[References to Secrets]
+** xref:pattern-secrets-management.adoc#vault[Vault]
+** xref:pattern-secrets-management.adoc#eso[eso]
+** xref:pattern-secrets-management.adoc#vaultconcepts[Vault Concepts]
+
+
+
+
 * xref:secrets.adoc[Exercises]
 
 //Chapter 7 - SelfContained Pattern Resources

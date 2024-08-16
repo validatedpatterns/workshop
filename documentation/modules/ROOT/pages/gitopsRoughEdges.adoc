@@ -4,6 +4,6 @@ include::_attributes.adoc[]
 
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
-
+link:https://developers.redhat.com/e-books/path-gitops[GitOps Rough Edges]
 
 [#website]
