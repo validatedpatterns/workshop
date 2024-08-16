@@ -58,6 +58,7 @@
 
 //Chapter 6 - Secrets Management
 * xref:secrets.adoc[6. Secrets Management]
+** xref:secrets.adoc#objectives[Topic Objectives]
 * xref:secrets.adoc[Exercises]
 
 //Chapter 7 - SelfContained Pattern Resources
