@@ -4,6 +4,7 @@
 :rhacm: Red Hat Advanced Cluster Management for Kubernetes
 :rhacs: Red Hat Advanced Cluster Security for Kubernetes
 :rhocp: Red Hat OpenShift Container Platform
+:rhodf: Red Hat OpenShift Data Foundations
 :rh-gitops: Red Hat OpenShift GitOps
 :eso: External Secrets Operator
 :vault: HashiCorp Vault
