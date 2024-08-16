@@ -22,7 +22,7 @@ image::consuming-vpWorkflow-hub.png[Hub Cluster]
 2. ArgoCD then deploys the operators, namespaces, projects and applications defined in the values files
 3. If deploying across multiple clusters, the framework uses {rhacm} policies to create the instance of {rh-gitops} on the remote cluster
 
-NOTE: `values-hub.yaml` is the primary values file for the `hub` cluster
+> NOTE: `values-hub.yaml` is the primary values file for the `hub` cluster
 
 image::consuming-vpWorkflow-managedCluster.png[Managed Cluster]
 
@@ -31,7 +31,7 @@ image::consuming-vpWorkflow-managedCluster.png[Managed Cluster]
 3. A placement policy is then deployed to the managed cluster which installs an instances of {rh-gitops}
 4. The managed cluster's instance of ArgoCD will then deploy the resources declared in `values-clustergroup.yaml`
 
-IMPORTANT: Deploying the pattern through the OpenShift Console or via `pattern.sh` will deploy the patterns operator.
+> IMPORTANT: Deploying the pattern through the OpenShift Console or via `pattern.sh` will deploy the patterns operator.
 
 === Element Layering 
 [#layering]

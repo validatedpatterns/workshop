@@ -32,7 +32,7 @@ What's the role of the **common** repository?
 
 What's in common? 
 
-NOTE: The common repository is where all the common manifests for the Validated Patterns framework live
+> NOTE: The common repository is where all the common manifests for the Validated Patterns framework live
 
 * **acm** - contains the helm charts, which contains policies and is used to configure the deployment of the {rhacm}
 * **clusterGroup** - contains the helm charts used to create namespaces, subscriptions, Argo Project and Applications described in values files. THis is the seed for all the patterns.

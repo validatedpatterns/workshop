@@ -6,7 +6,6 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
 * Declarative Synchronization
 * Describe different ways of implementing flow control using Validated Patterns and GitOps built-in tools
-* Command Line Interface (CLI) Tools
 
 [%hardbreaks]
 
@@ -47,7 +46,7 @@ We have options!
 [#jobs]
 === Jobs
 
-NOTE: Jobs are part of the kubernetes batch api group
+> NOTE: Jobs are part of the kubernetes batch api group
 
 Within the Patterns framework we mainly use jobs to: 
 
@@ -58,16 +57,16 @@ Within the Patterns framework we mainly use jobs to:
 [#cron]
 === cronJobs
 
-NOTE: cronJobs are part of the kubernetes batch api group
+> NOTE: cronJobs are part of the kubernetes batch api group
 
 Within the Patterns framework we mainly use jobs to: 
 
 * schedule imperative tasks in the imperative framework such as keeping the Vault unsealed
 * run Ansible playbooks
 
-IMPORTANT: Ansible Roles and Playbooks **MUST** be idempotent to prevent sync failures
+> IMPORTANT: Ansible Roles and Playbooks **MUST** be idempotent to prevent sync failures
 
-NOTE: The cronJob syntax is the same as in posix systems
+> NOTE: The cronJob syntax is the same as in posix systems
 
 [source,bash]
 ----

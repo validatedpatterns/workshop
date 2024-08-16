@@ -63,7 +63,7 @@ applications:
 
 |===
 
-NOTE: Sometimes we may need to override a default - an example of this is needing to create an OperatorGroup that doesn't monitor namespaces - check out link:https://validatedpatterns.io/blog/2023-12-15-understanding-namespaces/[this blog] to learn how!
+> NOTE: Sometimes we may need to override a default - an example of this is needing to create an OperatorGroup that doesn't monitor namespaces - check out link:https://validatedpatterns.io/blog/2023-12-15-understanding-namespaces/[this blog] to learn how!
 
 [#valuesSecret]
 == values-secret template
