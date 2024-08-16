@@ -51,7 +51,6 @@
 ** xref:creatingPatterns.adoc[Creating a Validated Pattern]
 *** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 *** xref:creatingPatterns.adoc#common[Understanding Common]
-*** xref:creatingPatterns.adoc#requirements[Pattern Requirements]
 *** xref:creatingPatterns.adoc#creating[Creation Process]
 *** xref:creatingPatterns.adoc#exercises[Exercises]
 
