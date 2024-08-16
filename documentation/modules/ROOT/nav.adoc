@@ -64,13 +64,19 @@
 *** xref:pattern-secrets-management.adoc#encryptedSecrets[Encrypted Secrets]
 *** xref:pattern-secrets-management.adoc#secretReferences[References to Secrets]
 ** xref:pattern-secrets-management.adoc#vault[Vault]
-** xref:pattern-secrets-management.adoc#eso[eso]
+** xref:pattern-secrets-management.adoc#eso[ESO]
 ** xref:pattern-secrets-management.adoc#vaultconcepts[Vault Concepts]
+** xref:pattern-secrets-management.adoc#esoconcepts[ESO Concepts]
+** xref:secrets-loading.adoc#secretLoading[Secrets Loading]
+** xref:secrets-loading.adoc#valuesecret[Secrets Template in the Patterns]
+** xref:secrets-loading.adoc#policy[Default Password Policy]
+** xref:secrets-loading.adoc#secretExamples[Secret Template Examples]
+*** xref:secrets-loading.adoc#certificate[Loading a Certificate]
+*** xref:secrets-loading.adoc#awscreds[Loading AWS Credentials]
 
 
 
-
-* xref:secrets.adoc[Exercises]
+** xref:secrets.adoc[Exercises]
 
 //Chapter 7 - SelfContained Pattern Resources
 * xref:selfContained.adoc[7. Self Contained Patterns]
