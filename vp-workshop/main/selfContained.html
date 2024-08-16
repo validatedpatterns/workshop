@@ -218,23 +218,27 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="creatingPatterns.html">Creating a Validated Pattern</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="creatingPatterns.html#objectives">Topic Objectives</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="creatingPatterns.html#common">Understanding Common</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="creatingPatterns.html#creating">Creation Process</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="creatingPatterns.html#exercises">Exercises</a>
-  </li>
-</ul>
   </li>
 </ul>
   </li>
@@ -310,10 +314,22 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="selfContained.html">7. Self Contained Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#contained">Self Contained?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#thoughts">Additional Thoughts</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="selfContained.html">Exercises</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -355,6 +371,27 @@
   </li>
 </ul>
   </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#clusterDomains.adoc">xx. Handling Cluster Domains</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#multisource.adoc">xx. Multi Source Patterns</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#imperative.adoc">xx. Imperative Framework</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </nav>
 </div>
@@ -386,6 +423,105 @@
 <div class="sectionbody">
 <div id="objectives" class="paragraph">
 <p>In this topic we will discuss:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What it means to be a "Self Contained" pattern</p>
+</li>
+</ul>
+</div>
+<div id="contained" class="imageblock">
+<div class="content">
+<img src="_images/complete-pattern.png" alt="complete pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>Every Pattern has resources that make it unique:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Container Images</p>
+</li>
+<li>
+<p>Containerfiles (aka: Dockerfiles)</p>
+</li>
+<li>
+<p>Helm Charts</p>
+</li>
+<li>
+<p>Kustomize Manifests</p>
+</li>
+<li>
+<p>Kubernetes Manifests</p>
+</li>
+<li>
+<p>Ansible Codes</p>
+</li>
+<li>
+<p>Shell/Other programming language scripts</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Where or would I add them to the pattern?</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Placement</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kubernetes manifests (.yaml)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">They can either be coverted to a Helm chart, or the raw manifests can be placed in a directory under <code>charts/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kustomize manifests</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kustomize manifests can be placed in a directory under <code>charts/</code> or another path (e.g. <code>kustomize</code>) could be used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ansible</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ansible roles and playbooks can be deployed through the imperative framework, or via kubernetes job resources in a Helm chart</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'Scripts'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shell scripts and other programs that are required for applications can be converted to a configMap and mounted as a volume in a pod (job)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The pattern should be able to deploy all the resources needed to run your applications.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="thoughts"><a class="anchor" href="#thoughts"></a>Thoughts on Self-Contained Patterns</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Reusability / Repurposing becomes a serious problem when these resources are behind paywalls, private github repositories and registries.</p>
+</li>
+<li>
+<p>Patterns designed and delivered for public consumption should have all of its resources available in a public repository and container registry</p>
+</li>
+<li>
+<p>Self-contained patterns is letting the cluster build and deploy the container image used by applications (where it makes sense).</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
