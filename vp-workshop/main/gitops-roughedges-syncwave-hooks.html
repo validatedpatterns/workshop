@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sync Waves and Hooks :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/gitops-roughedges-syncwave-hooks.html">
+    <link rel="prev" href="gitopsRoughEdges.html">
+    <link rel="next" href="gitopsRoughEdges.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://validatedpatterns.github.io/workshop">Validated Patterns Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vp-workshop" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="getting-started.html">1. Getting Started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="getting-started.html#prereqs">Pre-Requisites</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="patterns.html">2. Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patterns.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patterns.html#goals">Validated Patterns Business Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patterns.html#benefits">Benefits of Validated Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patterns.html#batteries">Batteries Included</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patterns.html#whotheyfor">Who are the Patterns for</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patternsDemo.html">Demo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="landscape.html">3. Existing Pattern Landscape</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="landscape.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="landscape.html#patterns">Available Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="landscape.html#website">Where to find existing Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="partners.html">Partners</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="partners.html#intel">Intel</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="partners.html#intel-mcgo">Intel MultiCloud GitOps</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="partners.html#intel-md">Intel Medical Diagnosis</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="partners.html">Portworx</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="partners.html#pwx-mcgo">Portworx</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="partners.html">Cisco</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="partners.html#cisco-pwx-mcgo">Cisco</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="partners.html">Veeam/Kasten</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="partners.html#veeam-mcgo">Veeam/Kasten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="tiers.html">4. Pattern Tiers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tiers.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tiers.html#about">About the Pattern Tiers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tiers.html#resources">Additional Resources</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="consumingPatterns.html">5. Validated Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="consumingPatterns.html">Consuming a Validated Pattern</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns.html#workflow">Validated Pattern Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns.html#layering">Solution Layering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns.html#multiArgos">Multiple Argo&#8217;s</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns-valuesFiles.html#values">Pattern Values Files</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns-valuesFiles.html#valuesSecret">Pattern Secret Values Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="patternsOperator.html#features">About the Patterns Operator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="patternsWrapperScript.html#about">About the Patterns.sh wrapper</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="patternsWrapperScript.html#help">Wrapper Help</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="repoFork.html#about">To Fork or Not to Fork</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="consumingPatterns.html#exercises">Exercises</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="creatingPatterns.html">Creating a Validated Pattern</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="creatingPatterns.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="creatingPatterns.html#common">Understanding Common</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="creatingPatterns.html#creating">Creation Process</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="creatingPatterns.html#exercises">Exercises</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="secrets.html">6. Secrets Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets.html#secretsGitops">Secrets Management and GitOps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pattern-secrets-management.html#esoVault">ESO and Vault</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pattern-secrets-management.html#approaches">Approaches</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pattern-secrets-management.html#encryptedSecrets">Encrypted Secrets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pattern-secrets-management.html#secretReferences">References to Secrets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pattern-secrets-management.html#vault">Vault</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pattern-secrets-management.html#eso">ESO</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pattern-secrets-management.html#vaultconcepts">Vault Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pattern-secrets-management.html#esoconcepts">ESO Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets-loading.html#secretLoading">Secrets Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets-loading.html#valuesecret">Secrets Template in the Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets-loading.html#policy">Default Password Policy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="secrets-loading.html#secretExamples">Secret Template Examples</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="secrets-loading.html#certificate">Loading a Certificate</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="secrets-loading.html#awscreds">Loading AWS Credentials</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="secrets.html">Exercises</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="selfContained.html">7. Self Contained Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfContained.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfContained.html#contained">Self Contained?</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfContained.html#thoughts">Additional Thoughts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfContained.html">Exercises</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gitopsRoughEdges.html">8. GitOps Rough Edges</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gitopsRoughEdges.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gitopsRoughEdges.html#declarativeSync">Declarative Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gitopsRoughEdges.html#imperative">Imperative Actions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gitopsRoughEdges.html#jobs">Kubernetes Batch API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gitopsRoughEdges.html#jobs">Kubernetes Jobs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="gitopsRoughEdges.html#cron">Kubernetes cronJobs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="gitops-roughedges-syncwave-hooks.html">Sync Waves and Hooks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#using_syncwaves">Using Sync Waves</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#exploring_the_manifests_waves">Exploring Sync Wave Manifests</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="#using_resource_hooks">Using Resource Hooks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#exploring_the_manifests_hooks">Exploring Resource Hook Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gitopsRoughEdges.html">Exercises</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="multipleClusters.html">9. Working with Multiple Clusters</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="troubleshooting.html">10. Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="helm.html">11. Helm for Fun and Profit</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="additionalTopics.html">12. Additional Resources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#clusterDomains.adoc">xx. Handling Cluster Domains</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#multisource.adoc">xx. Multi Source Patterns</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#imperative.adoc">xx. Imperative Framework</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Validated Patterns Workshop</a></li>
+    <li><a href="gitopsRoughEdges.html">8. GitOps Rough Edges</a></li>
+    <li><a href="gitops-roughedges-syncwave-hooks.html">Sync Waves and Hooks</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/gitops-roughedges-syncwave-hooks.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Sync Waves and Hooks</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://argoproj.github.io/argo-cd/user-guide/sync-waves/" target="_blank" rel="noopener">Sync waves</a>
+are used in Argo CD to order how manifests are applied to the cluster.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://argoproj.github.io/argo-cd/user-guide/resource_hooks/" target="_blank" rel="noopener">Resource hooks</a> break up the delivery of these manifests into different
+phases.</p>
+</div>
+<div class="paragraph">
+<p>Using a combination of sync waves and resource hooks, you can control how your
+application rolls out.</p>
+</div>
+<div class="paragraph">
+<p>This example will take you through the following steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using sync waves to order deployment</p>
+</li>
+<li>
+<p>Exploring resource hooks</p>
+</li>
+<li>
+<p>Using sync waves and hooks together</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sample application that we will deploy is a TODO application with a database
+and, apart from deployment files, sync waves and resource hooks are used:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/todo-app.png" alt="todo app">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using_syncwaves"><a class="anchor" href="#using_syncwaves"></a>Using Sync Waves</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A sync wave is a way to order how Argo CD applies the manifests that are stored
+in git. All manifests have a wave of zero by default, but you can set these by
+using the <code>argocd.argoproj.io/sync-wave</code> annotation.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The wave can also be negative as well.</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-5"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When Argo CD starts a sync action, the manifests get placed in the following
+order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Phase that they&#8217;re in (we&#8217;ll cover phases in the next section)</p>
+</li>
+<li>
+<p>The wave the resource is annotated in (starting from the lowest value to the
+highest)</p>
+</li>
+<li>
+<p>By kind (Namespaces first, then services, then deployments, etc &#8230;&#8203;)</p>
+</li>
+<li>
+<p>By name (ascending order)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Read more about sync waves on the
+<a href="https://argoproj.github.io/argo-cd/user-guide/sync-waves/#how-do-i-configure-waves" target="_blank" rel="noopener">official documentation site</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="exploring_the_manifests_waves"><a class="anchor" href="#exploring_the_manifests_waves"></a>Exploring Sync Wave Manifests</h3>
+<div class="paragraph">
+<p>The sample application that you will deploy has several waves.</p>
+</div>
+<div class="paragraph">
+<p>First, <strong>PostgreSQL</strong> with sync wave <strong>0</strong>. It has a Deployment:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  selector:
+    matchLabels:
+      app: postgresql
+  template:
+    metadata:
+      labels:
+        app: postgresql
+    spec:
+      containers:
+        - name: postgresql
+          image: quay.io/redhatdemo/openshift-pgsql12-primary:centos7
+          imagePullPolicy: Always
+          ports:
+            - name: tcp
+              containerPort: 5432
+          env:
+            - name: PG_USER_PASSWORD
+              value: admin
+            - name: PG_USER_NAME
+              value: admin
+            - name: PG_DATABASE
+              value: todo
+            - name: PG_NETWORK_MASK
+              value: all</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>PostgreSQL Service</strong> with sync wave <strong>0</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  selector:
+    app: postgresql
+  ports:
+    - name: pgsql
+      port: 5432
+      targetPort: 5432</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Second, <strong>Database table creation</strong> with sync wave <strong>1</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: batch/v1
+kind: Job
+metadata:
+  name: todo-table
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  template:
+    spec:
+      containers:
+        - name: postgresql-client
+          image: postgres:12
+          imagePullPolicy: Always
+          env:
+            - name: PGPASSWORD
+              value: admin
+          command: ["psql"]
+          args:
+            [
+              "--host=postgresql",
+              "--username=admin",
+              "--no-password",
+              "--dbname=todo",
+              "--command=create table Todo (id bigint not null,completed boolean not null,ordering integer,title varchar(255),url varchar(255),primary key (id));create sequence hibernate_sequence start with 1 increment by 1;",
+            ]
+      restartPolicy: Never
+  backoffLimit: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>TODO application deployment</strong> with sync wave <strong>2</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+apiVersion: "v1"
+kind: "ServiceAccount"
+metadata:
+  labels:
+    app.kubernetes.io/name: "todo-gitops"
+    app.kubernetes.io/version: "1.0.0"
+  name: "todo-gitops"
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  labels:
+    app.kubernetes.io/name: "todo-gitops"
+    app.kubernetes.io/version: "1.0.0"
+  name: "todo-gitops"
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: "todo-gitops"
+      app.kubernetes.io/version: "1.0.0"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: "todo-gitops"
+        app.kubernetes.io/version: "1.0.0"
+    spec:
+      containers:
+      - env:
+        - name: "KUBERNETES_NAMESPACE"
+          valueFrom:
+            fieldRef:
+              fieldPath: "metadata.namespace"
+        image: "quay.io/rhdevelopers/todo-gitops:1.0.0"
+        imagePullPolicy: "Always"
+        name: "todo-gitops"
+        ports:
+        - containerPort: 8080
+          name: "http"
+          protocol: "TCP"
+      serviceAccount: "todo-gitops"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>TODO Service</strong> with sync wave <strong>2</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  labels:
+    app.kubernetes.io/name: "todo-gitops"
+    app.kubernetes.io/version: "1.0.0"
+  name: "todo-gitops"
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  ports:
+  - name: "http"
+    port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: "todo-gitops"
+    app.kubernetes.io/version: "1.0.0"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>TODO Route</strong> with sync wave <strong>3</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: todo
+  name: todo
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: todo-gitops
+    weight: 100</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First, the PostgreSQL Deployment will be applied. After that reports healthy,
+Argo CD will continue with the rest of resources.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Argo CD won&#8217;t apply the next manifest in a wave until the previous
+reports "healthy".
+</td>
+</tr>
+</table>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using_resource_hooks"><a class="anchor" href="#using_resource_hooks"></a>Using Resource Hooks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you&#8217;re familiar with sync waves, we can begin exploring applying
+manifests in phases using <code>resource hooks</code>.</p>
+</div>
+<div class="paragraph">
+<p>Controlling your sync operation can be further refined by using
+hooks. These hooks can run before, during, and after a sync
+operation. These hooks are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>PreSync</strong> - Runs before the sync operation. This can be something like a
+database backup before a schema change</p>
+</li>
+<li>
+<p><strong>Sync</strong> - Runs after <code>PreSync</code> has successfully ran. This will run alongside
+your normal manifests.</p>
+</li>
+<li>
+<p><strong>PostSync</strong> - Runs after <code>Sync</code> has ran successfully. This can be something
+like a Slack message or an email notification.</p>
+</li>
+<li>
+<p><strong>SyncFail</strong> - Runs if the <code>Sync</code> operation has failed. This is also used to
+send notifications or do other evasive actions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To enable a sync, annotate the specific object manifest with
+<code>argocd.argoproj.io/hook</code> with the type of sync you want to use for that
+resource. For example, if you wanted to use the <code>PreSync</code> hook:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">metadata:
+  annotations:
+    argocd.argoproj.io/hook: PreSync</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also have the hooks be deleted after a successful/unsuccessful run.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>HookSucceeded</strong> - The resource will be deleted after it has succeeded.</p>
+</li>
+<li>
+<p><strong>HookFailed</strong> - The resource will be deleted if it has failed.</p>
+</li>
+<li>
+<p><strong>BeforeHookCreation</strong> - The resource will be deleted before a new one is
+created (when a new sync is triggered).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can apply these with the <code>argocd.argoproj.io/hook-delete-policy</code>
+annotation. For example:</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">metadata:
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Since a sync can fail in any phase, you can come to a situation where
+the application never reports healthy!
+</td>
+</tr>
+</table>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Although hooks can be any resource, they are usually Pods and/or Jobs.</p>
+</div>
+<div class="paragraph">
+<p>To read more about resource hooks, consult the
+<a href="https://argoproj.github.io/argo-cd/user-guide/resource_hooks">official
+documentation</a></p>
+</div>
+<div class="sect2">
+<h3 id="exploring_the_manifests_hooks"><a class="anchor" href="#exploring_the_manifests_hooks"></a>Exploring Resource Hook Manifests</h3>
+<div class="paragraph">
+<p>Take a look at this <code>PostSync</code> manifest which sends an HTTP request to insert a
+new TODO item:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: batch/v1
+kind: Job
+metadata:
+  name: todo-insert
+  annotations:
+    argocd.argoproj.io/hook: PostSync <i class="conum" data-value="1"></i><b>(1)</b>
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: httpie
+          image: alpine/httpie:2.4.0
+          imagePullPolicy: Always
+          command: ["http"]
+          args:
+            [
+              "POST",
+              "todo-gitops:8080/api",
+              "title=Finish ArgoCD tutorial",
+              "--ignore-stdin"
+            ]
+      restartPolicy: Never
+  backoffLimit: 1</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This means that this Job will run in the <code>PostSync</code> phase, after the
+application of the manifests in the <code>Sync</code> phase.</td>
+</tr>
+</table>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Since there is no deletion policy, this job will "stick around"
+after completion.
+</td>
+</tr>
+</table>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The execution order can be seen in the following diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/presyncpost.png" alt="presyncpost">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying_the_application"><a class="anchor" href="#deploying_the_application"></a>Deploying The Application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Taking a look at this manifest file: <code>todo-application.yaml</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app
+spec:
+  destination:
+    namespace: user$USERNUM-todo
+    server: <a href="https://kubernetes.default.svc" class="bare">https://kubernetes.default.svc</a>
+  project: default
+  source:
+    path: documentation/modules/ROOT/examples/todo
+    repoURL: <a href="https://github.com/openshiftdemos/openshift-gitops-workshop" class="bare">https://github.com/openshiftdemos/openshift-gitops-workshop</a>
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create this application:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sed 's/$USERNUM/%USERNUM%/' ~/openshift-gitops-workshop/documentation/modules/ROOT/examples/todo-application.yaml | oc apply -n user%USERNUM%-argocd -f -</code></pre>
+</div>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">application.argoproj.io/todo-app created</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the Argo CD WebUI, you should see another application appear.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/todo-card.png" alt="TODO Card">
+</div>
+</div>
+<div class="paragraph">
+<p>Clicking on this "card" should take you over to the tree view.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/todo-argocd.png" alt="TODO Tree">
+</div>
+</div>
+<div class="paragraph">
+<p>Observe the sync process. You will see the order that the resource has been applied, first the namespace creation and last the creation of Route to access the application.</p>
+</div>
+<div class="paragraph">
+<p>Once the application is fully synced. Take a look at the pods and jobs in
+the namespace:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get pods -n user%USERNUM%-todo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see that the Job is finished, but still there.</p>
+</div>
+<div class="listingblock console-output">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">NAME                           READY   STATUS      RESTARTS   AGE
+postgresql-599467fd86-cgj9v    1/1     Running     0          32s
+todo-gitops-679d88f6f4-v4djp   1/1     Running     0          19s
+todo-table-xhddk               0/1     Completed   0          27s</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can get the Route for your application from the topology view, or you can
+use the following CLI snippet to get the exact URL you need:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get route -n user%USERNUM%-todo todo -o jsonpath='{"http://"}{.spec.host}{"/todo.html\n"}'</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You need to use <code>/todo.html</code> in the URL to access the application. It
+does not automatically redirect.
+</td>
+</tr>
+</table>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Your application should look like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/todo-app-screenshot.png" alt="TODO">
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>todo-insert</code> Job is not shown as it was configured to be deleted if succeeded:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">argocd.argoproj.io/hook-delete-policy: HookSucceeded</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="gitopsRoughEdges.html">8. GitOps Rough Edges</a></span>
+  <span class="next"><a href="gitopsRoughEdges.html">Exercises</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../../_/js/vendor/clipboard.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
