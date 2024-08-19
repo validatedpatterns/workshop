@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/repoFork.html">
-    <link rel="prev" href="patternsWrapperScript.html#about">
-    <link rel="next" href="consumingPatterns.html#exercises">
+    <link rel="canonical" href="https://validatedpatterns.github.io/workshop/vp-workshop/main/multisource.html">
+    <link rel="prev" href="#clusterDomains.adoc">
+    <link rel="next" href="#imperative.adoc">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -211,7 +211,7 @@
     <a class="nav-link" href="patternsWrapperScript.html#help">Wrapper Help</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#about">To Fork or Not to Fork</a>
+    <a class="nav-link" href="repoFork.html#about">To Fork or Not to Fork</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="consumingPatterns.html#exercises">Exercises</a>
@@ -444,33 +444,33 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="multisource.html">xx. Multi Source Patterns</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#objectives">Topic Objectives</a>
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#meaning">What does it mean to use multisource?</a>
+    <a class="nav-link" href="#meaning">What does it mean to use multisource?</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#how">How it works</a>
+    <a class="nav-link" href="#how">How it works</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#status">Current Status</a>
+    <a class="nav-link" href="#status">Current Status</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#ux">User Experience</a>
+    <a class="nav-link" href="#ux">User Experience</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#helmRepo">Helm Chart Repository</a>
+    <a class="nav-link" href="#helmRepo">Helm Chart Repository</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#chart-release">Creating a chart release</a>
+    <a class="nav-link" href="#chart-release">Creating a chart release</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="multisource.html#next">Next Steps</a>
+    <a class="nav-link" href="#next">Next Steps</a>
   </li>
 </ul>
   </li>
@@ -502,75 +502,258 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="consumingPatterns.html">5. Validated Patterns</a></li>
-    <li><a href="consumingPatterns.html">Consuming a Validated Pattern</a></li>
-    <li><a href="#about">To Fork or Not to Fork</a></li>
+    <li><a href="multisource.html">xx. Multi Source Patterns</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/repoFork.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/multisource.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
 <div class="sect1">
-<h2 id="_to_fork_or_not_to_fork"><a class="anchor" href="#_to_fork_or_not_to_fork"></a>To fork or not to fork</h2>
+<h2 id="_multisource"><a class="anchor" href="#_multisource"></a>MultiSource</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="about"><a class="anchor" href="#about"></a>Why fork?</h3>
-<div class="imageblock">
-<div class="content">
-<img src="_images/fork.png" alt="fork">
+
 </div>
+</div>
+<div class="sect1">
+<h2 id="_topic_objectives"><a class="anchor" href="#_topic_objectives"></a>Topic Objectives</h2>
+<div class="sectionbody">
+<div id="objectives" class="paragraph">
+<p>In this topic we will discuss:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You need to be able to make changes for your own organization&#8217;s needs</p>
+<p>What does multisource mean?</p>
 </li>
 <li>
-<p>GitOps is all about git, merging changes safely is foundational</p>
+<p>MultiSource status</p>
 </li>
 <li>
-<p>Some changes make sense to be merged upstream</p>
+<p>User Experience</p>
 </li>
 <li>
-<p>You can make a pull request (PR) on the upstream pattern</p>
+<p>Next Steps</p>
 </li>
 </ul>
 </div>
+<div id="meaning" class="paragraph">
+<p>Using multiple-sources in our ArgoCD applications gives the Patterns framework a lot of flexibility in how applications are deployed. In the code snippet below we can see that we have a chart called <code>acm</code> where we have our normal values getting assigned, but also using values from another repository - in this case <code><a href="https://github.com/f00/multicloud-gitops" class="bare">https://github.com/f00/multicloud-gitops</a></code></p>
 </div>
-<div class="sect2">
-<h3 id="_typical_recommended_fork_structure"><a class="anchor" href="#_typical_recommended_fork_structure"></a>Typical recommended fork structure</h3>
-<div class="imageblock">
+<div class="exampleblock">
 <div class="content">
-<img src="_images/fork-structure.png" alt="fork structure">
+<div class="paragraph">
+<p># MULTISOURCE
+sources:
+- ref: patternref
+  repoURL: <a href="https://github.com/foo/multicloud-gitops" class="bare">https://github.com/foo/multicloud-gitops</a>
+  targetRevision: test2
+- chart: acm
+  repoURL: <a href="https://charts.validatedpatterns.io/" class="bare">https://charts.validatedpatterns.io/</a> # default
+  targetRevision: 0.1.*
+  helm:
+	ignoreMissingValueFiles: true
+	valueFiles:
+	- $patternref/values-global.yaml
+	- $patternref/values-hub.yaml
+	- $patternref/values-AWS.yaml
+	- $patternref/values-AWS-4.13.yaml
+	- $patternref/values-AWS-hub.yaml
+	- $patternref/values-4.13-hub.yaml
+	parameters:
+	&#8230;&#8203;</p>
+</div>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Git Workflow</strong></p>
+<p>With a single source we can only apply values files from within the repository, or declare them within the <code>applications</code> key. The primary issue with this approach is readability and reusability. The values file grows to a point where it is hard to follow the changes being made.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p># SINGLE SOURCE
+source:
+  repoURL: <a href="https://github.com/foo/multicloud-gitops" class="bare">https://github.com/foo/multicloud-gitops</a>
+  path: common/acm
+  targetRevision: test2
+  helm:
+	valueFiles:
+  	- /values-global.yaml
+  	- /values-hub.yaml
+  	- /values-AWS.yaml
+  	- /values-AWS-4.13.yaml
+  	- /values-AWS-hub.yaml
+  	- /values-4.13-hub.yaml
+	parameters:
+	&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how"><a class="anchor" href="#how"></a>How it works</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Multi-source needs to be enabled for the clusterGroup helm chart via: <code>main.multiSourceConfig.enabled</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Other applications stay <code>as-is</code> (e.g. single source like they have always been)</p>
+</div>
+<div class="paragraph">
+<p>Switching an application to use the Patterns chart and multisource capability requires a small tweak in the <code>values-*.yaml</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Yes, you can change the default VP repository
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s what it would look like:</p>
+</div>
+<div class="paragraph">
+<p><strong>Original Configuration:</strong></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>acm:
+  name: acm
+  path: common/acm</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Updated Configuration:</strong></p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>acm:
+  name: acm
+  chart: acm
+  chartVersion: 0.0.*</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status"><a class="anchor" href="#status"></a>Status</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Find the pattern closest to the solution you require</p>
+<p><a href="https://github.com/validatedpatterns/patterns-operator/pull/85">Pattern Operator PRs merged</a></p>
+</li>
+<li>
+<p><a href="https://github.com/validatedpatterns/common/pull/350">Common repository PRs merged</a></p>
+</li>
+<li>
+<p><a href="https://charts.validatedpatterns.io">VP Helm Chart Repository</a> set up and populated</p>
+</li>
+<li>
+<p>Industrial Edge has all VP charts as multisource (clusterGroup, ACM, ESO, Vault)</p>
+</li>
+<li>
+<p>MultiCloud GitOps has the clusterGroup chart as multisource enabled</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ux"><a class="anchor" href="#ux"></a>User Experience</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/multisource-config.png" alt="multisource config">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="helmRepo"><a class="anchor" href="#helmRepo"></a>Helm Chart Repository</h3>
+<div class="exampleblock INFORMATION">
+<div class="title">Example 1. How does it work?</div>
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Often this is <a href="https://github.com/validatedpatterns/multicloud-gitops">multicloud-gitops</a></p>
+<p><code>common/</code> now has a github workflow which is triggered at every commit to main <strong>chart-branches.yaml</strong></p>
+</li>
+<li>
+<p>If any commit changes one of the charts (except <code>operator-install</code>) the corresponding branch in common for that chart will be updated (<code>git subtree split</code>)</p>
+</li>
+<li>
+<p>This makes it so that the <strong><a href="https://github.com/validatedpatterns/common/tree/hashicorp-vault-main-single-chart">hashicorp-vault-main-single-chart</a></strong> branch only contains the code for the hashicrop-vault chart</p>
+</li>
+<li>
+<p>Then it takes that hashicorp-vault-main-single-chart branch and pushes it out to the <code>validatedpatterns/hashicorp-vault</code> git repository</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tldr"><a class="anchor" href="#_tldr"></a>TL;DR</h3>
+<div class="paragraph">
+<p><strong>validatedpatterns/{acm,clustergroup,hashicorp-vault&#8230;&#8203;}</strong> repos are automatically kept up to date every time we push to common</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="chart-release"><a class="anchor" href="#chart-release"></a>Creating a chart release</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change the version in <code>common/(chart}/Chart.yaml</code> (e.g. acm ver 0.0.2)</p>
+</li>
+<li>
+<p>Make sure the version propagated correctly in the vp/acm-chart repository</p>
+</li>
+<li>
+<p>From within the acm-chart repository, tag and push the new version <code>v0.0.2</code></p>
+</li>
+<li>
+<p>In <code>validatedpatterns/helm-charts</code>, a github workflow is triggered that will:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>build the helm chart</p>
+</li>
+<li>
+<p>upload it in the assets of the helm-charts repository</p>
+</li>
+<li>
+<p>update index.yaml</p>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="next"><a class="anchor" href="#next"></a>Next Steps</h3>
+<div class="ulist">
+<ul>
 <li>
-<p>Fork the repository into your organization or personal account</p>
+<p>Continue to monitor for any issues in Argo</p>
 </li>
 <li>
-<p>Clone your fork to your local workstation</p>
+<p>Expand the usage in other patterns</p>
 </li>
 <li>
-<p>Deploy / Change / Test</p>
-</li>
-<li>
-<p>Create pull requests to the repo and merge</p>
+<p>Create a simple way to test charts without pushing them to the main repo (dev/qa workflow)</p>
 </li>
 </ul>
 </div>
@@ -578,8 +761,8 @@
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="patternsWrapperScript.html#about">About the Patterns.sh wrapper</a></span>
-  <span class="next"><a href="consumingPatterns.html#exercises">Exercises</a></span>
+  <span class="prev"><a href="#clusterDomains.adoc">xx. Handling Cluster Domains</a></span>
+  <span class="next"><a href="#imperative.adoc">xx. Imperative Framework</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
