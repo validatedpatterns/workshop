@@ -1,6 +1,7 @@
 = Welcome to the Validated Patterns Workshop
 :page-layout: default
 :!sectids:
+:page-pagination:
 
 [.text-center.strong]
 == Overview
