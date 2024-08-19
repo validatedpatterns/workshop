@@ -25,7 +25,7 @@ image::Linux-Penguin-Evolution-1.png[evolution]
 
 == Business Goals
 
-Every organization is facing the need to transform itself into a digital business. It's part of an evolution to help **accelerate innovation** by making application development faster - fueled with data insights, and enabled through technologies like containers, kubernetes and artifical intelligence/machine learning.
+Every organization is facing the need to transform itself into a digital business. It's part of an evolution to help **accelerate innovation** by making application development faster - fueled with data insights, and enabled through technologies like containers, kubernetes and artificial intelligence/machine learning.
 
 In order to be successful, they know they must also look at how to be more **operationally agile** and **efficient** in order to quickly meet business needs. Hybrid-Cloud computing coupled with these new technologies is helping create new opportunities to achieve these goals.
 
@@ -74,6 +74,6 @@ image::introduction-pattern-values.png[]
 
 * Customers - get going faster, reduce risk, time to value
 * Sales - don't spend time architecting, they have a tested use ccase for a base deployment. Though messaged for a specific vertical in some cases, they can be used across other verticals. 
-* Partners - free use of a defined architecutre that you can build a solution on top of. All the value to accelerate sales/deployments.
+* Partners - free use of a defined architecture that you can build a solution on top of. All the value to accelerate sales/deployments.
 ** Can also be used as a way to promote your product (HashiCorp)
 * GSIs or Consulting Services - predefined architectures, ready to deploy with minimal modifications. They can trust in the use-case as it is maintained across production version updates.

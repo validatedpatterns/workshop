@@ -25,7 +25,7 @@ Where or would I add them to the pattern?
 |===
 |**Resource Type**|**Placement**
 | `kubernetes manifests (.yaml)`
-| They can either be coverted to a Helm chart, or the raw manifests can be placed in a directory under `charts/`
+| They can either be converted to a Helm chart, or the raw manifests can be placed in a directory under `charts/`
 |`kustomize manifests`
 | Kustomize manifests can be placed in a directory under `charts/` or another path (e.g. `kustomize`) could be used
 |`Ansible`
