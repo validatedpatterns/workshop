@@ -104,16 +104,22 @@
 
 //Appendix - Additional Resources
 * xref:additionalTopics.adoc[12. Additional Resources]
+//imperative
 ** xref:imperative.adoc[Imperative Framework]
 *** xref:imperative.adoc[Topic Objectives]
+//helm 
 ** xref:helm.adoc[Helm for Fun and Profit]
 *** xref:helm.adoc#objectives[Topic Objectives]
+//troubleshooting
 ** xref:troubleshooting.adoc[Troubleshooting]
 *** xref:troubleshooting.adoc#objectives[Topic Objectives]
 
 // Keeping track of what's unaccounted for  in toc
 // Handling Cluster Domains 
 * xref:clusterDomains.adoc[xx. Handling Cluster Domains]
+** xref:clusterDomains.adoc#objectives[Topic Objectives]
+** xref:clusterDomains.adoc#limitations[Limitations]
+** xref:clusterDomains.adoc#variables[Variables set by the Pattern]
 
 // MultiSource
 * xref:multisource.adoc[xx. Multi Source Patterns]
@@ -125,7 +131,3 @@
 ** xref:multisource.adoc#helmRepo[Helm Chart Repository]
 ** xref:multisource.adoc#chart-release[Creating a chart release]
 ** xref:multisource.adoc#next[Next Steps]
-
-// Imperative Framework
-* xref:imperative.adoc[xx. Imperative Framework]
-** xref:imperative.adoc#objectives[Topic Objectives]
