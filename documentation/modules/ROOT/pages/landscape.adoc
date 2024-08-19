@@ -7,7 +7,7 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 * What Validated Patterns are available
 ** What business problems are being addressed?
 ** Whether VPs are only applicable for the vertical industry the demo was created to show
-** How are they presented to custoemrs
+** How are they presented to customers
 * Working with Partners
 
 == Available Validated Patterns
@@ -23,7 +23,7 @@ As of July 2024 we can see that there has been a significant uptick in activity.
 image::landscape-july24.png[]
 
 == Validated Patterns WebSite
-The easiest and fastest way to find out what Validated Patterns are available and their availability is to check out the Validated Patterns webiste. 
+The easiest and fastest way to find out what Validated Patterns are available and their availability is to check out the Validated Patterns website.
 
 [#website]
 
@@ -38,4 +38,3 @@ The Patterns are also hosted in link:https://github.com/validatedpatterns/reposi
 
 //[#OpenShiftCommons]
 // Find out commons-sig info
-
