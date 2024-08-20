@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the Validated Patterns Workshop :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/index.html">
-    <link rel="next" href="getting-started.html">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/imperative.html">
+    <link rel="prev" href="additionalTopics.html">
+    <link rel="next" href="clusterDomains.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -417,21 +418,21 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="additionalTopics.html">10. Additional Resources</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="imperative.html">Imperative Framework</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="imperative.html#objectives">Topic Objectives</a>
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="imperative.html#versus">Imperative v. Declarative Actions</a>
+    <a class="nav-link" href="#versus">Imperative v. Declarative Actions</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="imperative.html#declaring">Declaring an imperative action</a>
+    <a class="nav-link" href="#declaring">Declaring an imperative action</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="imperative.html#cron-example">Imperative cronJob example</a>
+    <a class="nav-link" href="#cron-example">Imperative cronJob example</a>
   </li>
 </ul>
   </li>
@@ -527,52 +528,128 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="index.html">Welcome to the Validated Patterns Workshop</a></li>
+    <li><a href="additionalTopics.html">10. Additional Resources</a></li>
+    <li><a href="imperative.html">Imperative Framework</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/imperative.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Welcome to the Validated Patterns Workshop</h1>
-<div class="sect1 text-center strong">
-<h2>Overview</h2>
+<div class="sect1">
+<h2 id="_imperative_framework"><a class="anchor" href="#_imperative_framework"></a>Imperative Framework</h2>
 <div class="sectionbody">
-<div id="vp-workshop-all-local" class="paragraph">
-<p><strong>Reference Architectures with Added Value</strong></p>
-</div>
-<div class="paragraph">
-<p>Validated Patterns are an evolution of how you deploy and manage applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (ci) over your application.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2>About the Validated Patterns Workshop</h2>
+<h2 id="_topic_objectives"><a class="anchor" href="#_topic_objectives"></a>Topic Objectives</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The goal of this workshop is to immerse the participant in foundational knowledge for creating, using and extending a GitOps pattern with the Validated Patterns framework. In this workshop participants will:</p>
+<div id="objectives" class="paragraph">
+<p>In this topic we will discuss:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Learn GitOps fundamentals</p>
+<p>Imperative vs. Declarative</p>
 </li>
 <li>
-<p>Deploy a Validated Pattern</p>
+<p>Why we need the imperative framework</p>
 </li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="versus"><a class="anchor" href="#versus"></a>Imperative vs. Declarative Actions</h3>
+<div class="paragraph">
+<p>What&#8217;s the difference between Imperative and Declarative actions?</p>
+</div>
+<div class="paragraph">
+<p>Declarative is when we <strong>describe</strong> what we want in our clusters, and we let the GitOps controller reconcile the difference between what&#8217;s in Git and what&#8217;s in the cluster.</p>
+</div>
+<div class="paragraph">
+<p>Imperative is where we take action on the cluster. A simplified way of thinking about this is all of the actions done by hand (e.g. <code>oc apply -f</code>, <code>kubectl</code>)</p>
+</div>
+<div class="paragraph">
+<p>During the development of the imperative framework there as a realization that there was a generalized need to support a limited mechanism for running these imperative actions in the most declarative way possible.</p>
+</div>
+<div class="paragraph">
+<p>We needed an autoamted, self-contained and supportable mechanism to interact with elements of OpenShift that could not be predicted prior to installation.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of when this is necessary:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p>Extend an existing Validated Pattern</p>
+<p>The management of secrets across clusters - the need to make clusters mutually trust each others’ Certificate Authorities and transfer of tokens/credentials</p>
 </li>
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="declaring"><a class="anchor" href="#declaring"></a>Defining an imperative action</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The following code snippet is from the <code>values-hub.yaml</code> in the multicloud-gitops pattern
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  imperative:
+    # The default schedule is every 10 minutes: imperative.schedule
+    # Total timeout of all jobs is 1h: imperative.activeDeadlineSeconds
+    # imagePullPolicy is set to always: imperative.imagePullPolicy
+    jobs:
+      - name: hello-world
+        # ansible playbook to be run
+        playbook: common/ansible/playbooks/hello-world/hello-world.yaml
+        # per playbook timeout in seconds
+        timeout: 234
+        # verbosity: "-v"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the pattern is deployed a cronJob is created in the <code>imperative</code> namespace. By default it is set to run <code>every 10 minutes</code>.</p>
+</div>
+<div class="paragraph">
+<p>The cronJob (see below) has been parameterized so we can change the intervals and define our imperative playbooks.</p>
+</div>
+<div id="cron-example" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $.Values.clusterGroup.imperative.cronJobName }}
+  namespace: {{ $.Values.clusterGroup.imperative.namespace}}
+spec:
+  schedule: {{ $.Values.clusterGroup.imperative.schedule | quote }}
+  # if previous Job is still running, skip execution of a new Job
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: {{ $.Values.clusterGroup.imperative.activeDeadlineSeconds }}
+      template:
+        metadata:
+          name: {{ $.Values.clusterGroup.imperative.jobName }}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="getting-started.html" class="query-params-link">1. Getting Started</a></span>
+  <span class="prev"><a href="additionalTopics.html" class="query-params-link">10. Additional Resources</a></span>
+  <span class="next"><a href="clusterDomains.html" class="query-params-link">Handling Cluster Domains</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

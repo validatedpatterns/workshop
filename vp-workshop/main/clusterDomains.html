@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to the Validated Patterns Workshop :: Validated Patterns Workshop</title>
-    <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/index.html">
-    <link rel="next" href="getting-started.html">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/clusterDomains.html">
+    <link rel="prev" href="imperative.html">
+    <link rel="next" href="multisource.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
@@ -435,18 +436,18 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="clusterDomains.html">Handling Cluster Domains</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="clusterDomains.html#objectives">Topic Objectives</a>
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="clusterDomains.html#limitations">Limitations</a>
+    <a class="nav-link" href="#limitations">Limitations</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="clusterDomains.html#variables">Variables set by the Pattern</a>
+    <a class="nav-link" href="#variables">Variables set by the Pattern</a>
   </li>
 </ul>
   </li>
@@ -527,52 +528,96 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Validated Patterns Workshop</a></li>
-    <li><a href="index.html">Welcome to the Validated Patterns Workshop</a></li>
+    <li><a href="additionalTopics.html">10. Additional Resources</a></li>
+    <li><a href="clusterDomains.html">Handling Cluster Domains</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/ROOT/pages/clusterDomains.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Welcome to the Validated Patterns Workshop</h1>
-<div class="sect1 text-center strong">
-<h2>Overview</h2>
+<div class="sect1">
+<h2 id="_cluster_domains"><a class="anchor" href="#_cluster_domains"></a>Cluster Domains</h2>
 <div class="sectionbody">
-<div id="vp-workshop-all-local" class="paragraph">
-<p><strong>Reference Architectures with Added Value</strong></p>
-</div>
-<div class="paragraph">
-<p>Validated Patterns are an evolution of how you deploy and manage applications in a hybrid cloud. With a pattern, you can automatically deploy a full application stack through a GitOps-based framework. With this framework, you can create business-centric solutions while maintaining a level of Continuous Integration (ci) over your application.</p>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2>About the Validated Patterns Workshop</h2>
+<h2 id="_topic_objectives"><a class="anchor" href="#_topic_objectives"></a>Topic Objectives</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The goal of this workshop is to immerse the participant in foundational knowledge for creating, using and extending a GitOps pattern with the Validated Patterns framework. In this workshop participants will:</p>
+<div id="objectives" class="paragraph">
+<p>In this topic we will discuss:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Learn GitOps fundamentals</p>
+<p>ArgoCD Limitations</p>
 </li>
 <li>
-<p>Deploy a Validated Pattern</p>
-</li>
-<li>
-<p>Extend an existing Validated Pattern</p>
+<p>How the framework collects and uses cluster information</p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="limitations"><a class="anchor" href="#limitations"></a>Limitations</h3>
+<div class="paragraph">
+<p>By default ArgoCD does not expose any means to know the cluster&#8217;s name/FQDN (Fully Qualified Domain Name)</p>
+</div>
+<div class="paragraph">
+<p>To make up for this the framework collects some cluster information in order to provide resuable parameters for cluster specific values.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="variables"><a class="anchor" href="#variables"></a>Domain variables set by the pattern</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variable</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purpose</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Example (f applicable)</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>global.clusterDomain</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain of the cluster the application is running on without the <code>.apps</code> subdomain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>mcg-hub.aws.validatedpatterns.io</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>global.hubClusterDomain</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The domain of the hub cluster <strong>with the apps</strong> subdomain - same as <code>localClusterDomain</code> on the hub.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apps.mcg-hub.aws.validatedpatterns.io</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>global.localClusterDomain</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The domain of the cluster the application is running on - <strong>with the apps</strong> subdomain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>apps.mcg-hub.aws.validatedpatterns.io</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>global.clusterPlatform</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>aws</code>, <code>azure</code>, <code>gcp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>global.clusterVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift Cluster Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4.16</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="getting-started.html" class="query-params-link">1. Getting Started</a></span>
+  <span class="prev"><a href="imperative.html" class="query-params-link">Imperative Framework</a></span>
+  <span class="next"><a href="multisource.html" class="query-params-link">Multi Source Patterns</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
