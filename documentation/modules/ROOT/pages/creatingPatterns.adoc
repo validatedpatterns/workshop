@@ -101,7 +101,7 @@ Best practice is to align `pattern` with the repository title as it drives file 
 clusterGroup is most relevant when you have multiple clusters. Otherwise you can rely on the default `hub` group.
 
 [source,yaml]
-====
+----
   global:
     pattern: multicloud-gitops
     options:
@@ -110,7 +110,7 @@ clusterGroup is most relevant when you have multiple clusters. Otherwise you can
       installPlanApproval: Automatic
   main:
     clusterGroupName: hub
-====
+----
 
 == Adding to the Bill of materials
 
@@ -122,7 +122,7 @@ There are three major resources you can add: Operators, Applications (helm chart
 Operators can be simply added to the clusterGroup as subscriptions
 
 [source,yaml]
-====
+----
   subscriptions:
     acm:
       name: advanced-cluster-management
@@ -138,7 +138,7 @@ Operators can be simply added to the clusterGroup as subscriptions
       namespace: openshift-operators
       channel: stable
       source: certified-operators
-====
+----
 
 To find the *correct* names the easiest way to do this is to jump into the console, find the operator, get to the install screen
 
@@ -186,7 +186,7 @@ The values here are also usable in the `clusterGroup` files
 Values can directly be used within the context of files such as `values-hub.yaml` 
 
 [source,yaml]
-====
+----
   letsencrypt:
     region: ''
     server: https://acme-v02.api.letsencrypt.org/directory
@@ -197,7 +197,7 @@ Values can directly be used within the context of files such as `values-hub.yaml
     name: hub
     isHubCluster: true
 
-====
+----
 
 
 *Values override files*
@@ -210,13 +210,13 @@ These dynamic variables allow abstraction from variability between OpenShift ins
 The order of operations can be changed based on uses requirements easily with the list.
 
 [source,yaml]
-====
+----
   overrides:
     - '/overrides/values-{{ $.Values.global.clusterPlatform }}.yaml'
     - '/overrides/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.global.clusterVersion }}.yaml'
     - '/overrides/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.clusterGroup.name }}.yaml'
     - '/overrides/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml"
-====
+----
 
 *Discovery activity*: Logging into console for the `cluster` OpenShift gitops.
 Examine the root application to discover what variables have been provided to ArgoCD.
@@ -229,7 +229,7 @@ They should be viewed as absolutely hard coded into the pattern.
 
 
 [source,yaml]
-====
+----
   applications:
     coffeeshop-test:
       name: quarkuscoffeeshop-demo
@@ -241,6 +241,6 @@ They should be viewed as absolutely hard coded into the pattern.
         value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
       - name: ocp_auth.bind_password
         value: "supersecret"
-====
+----
 
 
