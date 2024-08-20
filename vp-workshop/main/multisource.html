@@ -571,16 +571,15 @@
 <div id="meaning" class="paragraph">
 <p>Using multiple-sources in our ArgoCD applications gives the Patterns framework a lot of flexibility in how applications are deployed. In the code snippet below we can see that we have a chart called <code>acm</code> where we have our normal values getting assigned, but also using values from another repository - in this case <code><a href="https://github.com/f00/multicloud-gitops" class="bare">https://github.com/f00/multicloud-gitops</a></code></p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p># MULTISOURCE
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># MULTISOURCE
 sources:
 - ref: patternref
-  repoURL: <a href="https://github.com/foo/multicloud-gitops" class="bare">https://github.com/foo/multicloud-gitops</a>
+  repoURL: https://github.com/foo/multicloud-gitops
   targetRevision: test2
 - chart: acm
-  repoURL: <a href="https://charts.validatedpatterns.io/" class="bare">https://charts.validatedpatterns.io/</a> # default
+  repoURL: https://charts.validatedpatterns.io/ # default
   targetRevision: 0.1.*
   helm:
 	ignoreMissingValueFiles: true
@@ -592,19 +591,17 @@ sources:
 	- $patternref/values-AWS-hub.yaml
 	- $patternref/values-4.13-hub.yaml
 	parameters:
-	&#8230;&#8203;</p>
-</div>
+	...</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>With a single source we can only apply values files from within the repository, or declare them within the <code>applications</code> key. The primary issue with this approach is readability and reusability. The values file grows to a point where it is hard to follow the changes being made.</p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p># SINGLE SOURCE
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># SINGLE SOURCE
 source:
-  repoURL: <a href="https://github.com/foo/multicloud-gitops" class="bare">https://github.com/foo/multicloud-gitops</a>
+  repoURL: https://github.com/foo/multicloud-gitops
   path: common/acm
   targetRevision: test2
   helm:
@@ -616,8 +613,7 @@ source:
   	- /values-AWS-hub.yaml
   	- /values-4.13-hub.yaml
 	parameters:
-	&#8230;&#8203;</p>
-</div>
+	...</code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -658,26 +654,25 @@ Yes, you can change the default VP repository
 <div class="paragraph">
 <p><strong>Original Configuration:</strong></p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p>acm:
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">acm:
   name: acm
-  path: common/acm</p>
-</div>
+  path: common/acm</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p><strong>Updated Configuration:</strong></p>
 </div>
-<div class="exampleblock">
+<div class="listingblock">
 <div class="content">
-<div class="paragraph">
-<p>acm:
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">acm:
   name: acm
   chart: acm
-  chartVersion: 0.0.*</p>
-</div>
+  chartVersion: 0.0.*
+  # Tweak the default below to point to an alternative chart repo (OCI registries are
+  # also supported)
+  # repoURL: https://charts.validatedpatterns.io</code></pre>
 </div>
 </div>
 </div>
