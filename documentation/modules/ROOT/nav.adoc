@@ -46,7 +46,7 @@
 *** xref:patternsWrapperScript.adoc#about[About the Patterns.sh wrapper]
 *** xref:patternsWrapperScript.adoc#help[Wrapper Help]
 *** xref:repoFork.adoc#about[To Fork or Not to Fork]
-*** xref:consumingPatterns.adoc#exercises[Exercises]
+*** xref:consumingPatterns.adoc[Consuming Validated Patterns]
 ** xref:creatingPatterns.adoc[Creating a Validated Pattern]
 *** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 *** xref:creatingPatterns.adoc#common[Understanding Common]
