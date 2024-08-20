@@ -40,3 +40,28 @@ image::multicluster-challenges.png[]
 ** ArgoCD’s forte is to declaratively deploy applications onto a Kubernetes cluster not manage clusters.  
 * Use {rhacm} which is built to manage multiple clusters
 
+[#rhacm]
+=== What is {rhacm}
+
+Red Hat® Advanced Cluster Management for Kubernetes controls clusters and applications from a single console, with built-in security policies. Extend the value of Red Hat OpenShift® by deploying apps, managing multiple clusters, and enforcing policies across multiple clusters at scale. Red Hat’s solution ensures compliance, monitors usage, and maintains consistency.
+
+For more information visit: link:https://www.redhat.com/en/technologies/management/advanced-cluster-management[Advanced Cluster Management]
+
+image::multicluster-rhacm-value.png[]
+
+* Multi-Cluster Lifecycle Environment: 
+** You can centrally create, update and delete Kubernetes clusters across multiple private and public clouds 
+** Search, find and modify any kubernetes resource across the entire domain.
+** Quickly troubleshoot and resolve issues across your federated domain
+
+* Policy Driven Governance
+** Centrally set & enforce policies for security, applications, & infrastructure
+** Quickly visualize detailed auditing on configuration of apps and clusters 
+** Built-in CIS compliance policies and audit checks
+** Immediate visibility into your compliance posture based on your defined standards
+
+* Advanced Application Lifecycle
+** Easily Deploy Applications at Scale 
+** Deploy Applications from Multiple Sources
+** Quickly visualize application relationships across clusters and those that span clusters
+
