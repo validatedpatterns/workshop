@@ -51,7 +51,7 @@
 *** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 *** xref:creatingPatterns.adoc#common[Understanding Common]
 *** xref:creatingPatterns.adoc#creating[Creation Process]
-*** xref:creatingPatterns.adoc#exercises[Exercises]
+//*** xref:creatingPatterns.adoc#exercises[Exercises]
 
 
 //Chapter 6 - Secrets Management
@@ -67,19 +67,19 @@
 ** xref:pattern-secrets-management.adoc#vaultconcepts[Vault Concepts]
 ** xref:pattern-secrets-management.adoc#esoconcepts[ESO Concepts]
 ** xref:secrets-loading.adoc#secretLoading[Secrets Loading]
-** xref:secrets-loading.adoc#valuesecret[Secrets Template in the Patterns]
+//** xref:secrets-loading.adoc#valuesecret[Secrets Template in the Patterns]
 ** xref:secrets-loading.adoc#policy[Default Password Policy]
 ** xref:secrets-loading.adoc#secretExamples[Secret Template Examples]
 *** xref:secrets-loading.adoc#certificate[Loading a Certificate]
 *** xref:secrets-loading.adoc#awscreds[Loading AWS Credentials]
-** xref:secrets.adoc[Exercises]
+//** xref:secrets.adoc[Exercises]
 
 //Chapter 7 - SelfContained Pattern Resources
 * xref:selfContained.adoc[7. Self Contained Patterns]
 ** xref:selfContained.adoc#objectives[Topic Objectives]
 ** xref:selfContained.adoc#contained[Self Contained?]
 ** xref:selfContained.adoc#thoughts[Additional Thoughts]
-** xref:selfContained.adoc[Exercises]
+//** xref:selfContained.adoc[Exercises]
 
 //Chapter 8 - GitOps Rough Edges
 * xref:gitopsRoughEdges.adoc[8. GitOps Rough Edges]
@@ -95,12 +95,13 @@
 *** xref:gitops-roughedges-syncwave-hooks.adoc#using_resource_hooks[Using Resource Hooks]
 **** xref:gitops-roughedges-syncwave-hooks.adoc#exploring_the_manifests_hooks[Exploring Resource Hook Manifests]
 //*** xref:gitops-roughedges-syncwave-hooks.adoc#deploying_the_application[Deploying the Application]
-** xref:gitopsRoughEdges.adoc[Exercises]
+//** xref:gitopsRoughEdges.adoc[Exercises]
 
 //Chapter 9 - Working with Multiple Clusters 
 * xref:multipleClusters.adoc[9. Working with Multiple Clusters]
 ** xref:multipleClusters.adoc#objectives[Topic Objectives]
-** xref:multipleClusters.adoc[]
+** xref:multipleClusters.adoc#why[Why manage multiple clusters]
+** xref:multipleClusters.adoc#challenges[Multi-Cluster Challenges]
 
 //Appendix - Additional Resources
 * xref:additionalTopics.adoc[10. Additional Resources]
@@ -122,7 +123,8 @@
 *** xref:multisource.adoc#helmRepo[Helm Chart Repository]
 *** xref:multisource.adoc#chart-release[Creating a chart release]
 *** xref:multisource.adoc#next[Next Steps]
-** xref:helm.adoc[Helm for Fun and Profit]
-*** xref:helm.adoc#objectives[Topic Objectives]
-** xref:troubleshooting.adoc[Troubleshooting]
-*** xref:troubleshooting.adoc#objectives[Topic Objectives]
+//TODO//
+//** xref:helm.adoc[Helm for Fun and Profit]
+//*** xref:helm.adoc#objectives[Topic Objectives]
+//** xref:troubleshooting.adoc[Troubleshooting]
+//*** xref:troubleshooting.adoc#objectives[Topic Objectives]

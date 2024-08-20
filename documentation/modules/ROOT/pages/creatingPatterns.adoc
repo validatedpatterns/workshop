@@ -20,6 +20,7 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 == Understanding common
 
 What's the role of the **common** repository?
+
 * The core components that make up the Validated Patterns framework are contained in the common repository
 * Including:
 ** OpenShift GitOps configurations
@@ -30,7 +31,7 @@ What's the role of the **common** repository?
 ** Operator CRDs and other assets
 ** Various utility scripts
 
-What's in common? 
+What's in common?
 
 > NOTE: The common repository is where all the common manifests for the Validated Patterns framework live
 
@@ -71,6 +72,10 @@ common
 * We are in the very early stages of moving the helm charts in common into a public Helm repository
 * Deploying our patterns with multi-source enabled which allows us to use multiple sources for values, which will help reduce the need to have all the charts in the repo
 * Continue to maintain Makefiles, Ansible scripts and other tools in this repo in support of deploying patterns
+
+You may be wondering - **why**? 
+
+We want to maximize modularity in the framework. This will reduce our reliance on the common repository as it is today and will decrease the footprint and complexity of the patterns. 
 
 [#Creation Process]
 == Creation Process
@@ -237,8 +242,5 @@ They should be viewed as absolutely hard coded into the pattern.
       - name: ocp_auth.bind_password
         value: "supersecret"
 ====
-
-
-
 
 

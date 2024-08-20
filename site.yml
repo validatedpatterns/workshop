@@ -21,7 +21,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/day0hero/vp-workshop-ui/releases/download/v0.10.1/ui-bundle.zip
+    url: https://github.com/day0hero/vp-workshop-ui/releases/download/v0.10.2/ui-bundle.zip
     snapshot: true
   supplemental_files:
     - path: ./supplemental-ui
