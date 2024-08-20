@@ -77,7 +77,7 @@ You may be wondering - **why**?
 
 We want to maximize modularity in the framework. This will reduce our reliance on the common repository as it is today and will decrease the footprint and complexity of the patterns. 
 
-[#Creation Process]
+[#creation]
 == Creation Process
 
 image::create-where2start.png[]
