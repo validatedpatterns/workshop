@@ -100,7 +100,7 @@
 //Chapter 9 - Working with Multiple Clusters 
 * xref:multipleClusters.adoc[9. Working with Multiple Clusters]
 ** xref:multipleClusters.adoc#objectives[Topic Objectives]
-** xref:multipleClusters.adoc[]
+** xref:multipleClusters.adoc#why[Why manage multiple clusters]
 
 //Appendix - Additional Resources
 * xref:additionalTopics.adoc[10. Additional Resources]
@@ -122,7 +122,8 @@
 *** xref:multisource.adoc#helmRepo[Helm Chart Repository]
 *** xref:multisource.adoc#chart-release[Creating a chart release]
 *** xref:multisource.adoc#next[Next Steps]
-** xref:helm.adoc[Helm for Fun and Profit]
-*** xref:helm.adoc#objectives[Topic Objectives]
-** xref:troubleshooting.adoc[Troubleshooting]
-*** xref:troubleshooting.adoc#objectives[Topic Objectives]
+//TODO//
+//** xref:helm.adoc[Helm for Fun and Profit]
+//*** xref:helm.adoc#objectives[Topic Objectives]
+//** xref:troubleshooting.adoc[Troubleshooting]
+//*** xref:troubleshooting.adoc#objectives[Topic Objectives]
