@@ -3,7 +3,7 @@ runtime:
 
 site:
   title: Validated Patterns Workshop
-  url: https://validatedpatterns.github.io/workshop
+  url: https://play.validatedpatterns.io
   start_page: vp-workshop::index.adoc
 
 content:
@@ -21,7 +21,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/redhat-developer-demos/rhd-tutorial-ui/releases/download/v0.1.10/ui-bundle.zip
+    url: https://github.com/day0hero/vp-workshop-ui/releases/download/v0.10.1/ui-bundle.zip
     snapshot: true
   supplemental_files:
     - path: ./supplemental-ui
