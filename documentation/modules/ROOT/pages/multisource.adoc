@@ -114,7 +114,7 @@ image::multisource-config.png[]
 ====
 * `common/` now has a github workflow which is triggered at every commit to main **chart-branches.yaml**
 * If any commit changes one of the charts (except `operator-install`) the corresponding branch in common for that chart will be updated (`git subtree split`)
-* This makes it so that the **link:https://github.com/validatedpatterns/common/tree/hashicorp-vault-main-single-chart[hashicorp-vault-main-single-chart]** branch only contains the code for the hashicrop-vault chart
+* This makes it so that the **link:https://github.com/validatedpatterns/common/tree/hashicorp-vault-main-single-chart[hashicorp-vault-main-single-chart]** branch only contains the code for the hashicorp-vault chart
 * Then it takes that hashicorp-vault-main-single-chart branch and pushes it out to the `validatedpatterns/hashicorp-vault` git repository
 ====
 
