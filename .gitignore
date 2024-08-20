@@ -1,4 +1,5 @@
 #swap files
+dictionary.dic
 *.swp
 
 target/
