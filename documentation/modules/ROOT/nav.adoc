@@ -20,11 +20,11 @@
 *** xref:partners.adoc#intel[Intel]
 **** xref:partners.adoc#intel-mcgo[Intel MultiCloud GitOps]
 **** xref:partners.adoc#intel-md[Intel Medical Diagnosis]
-*** xref:partners.adoc[Portworx]
+*** xref:partners.adoc#pwx-mcgo[Portworx]
 **** xref:partners.adoc#pwx-mcgo[Portworx]
-*** xref:partners.adoc[Cisco]
+*** xref:partners.adoc#cisco-pwx-mcgo[Cisco]
 **** xref:partners.adoc#cisco-pwx-mcgo[Cisco]
-*** xref:partners.adoc[Veeam/Kasten]
+*** xref:partners.adoc#veeam-mcgo[Veeam/Kasten]
 **** xref:partners.adoc#veeam-mcgo[Veeam/Kasten]
 
 // Chapter 4 - Pattern Maintenance Tiers
