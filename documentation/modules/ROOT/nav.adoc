@@ -41,7 +41,7 @@
 *** xref:consumingPatterns.adoc#layering[Solution Layering]
 *** xref:consumingPatterns.adoc#multiArgos[Multiple Argo's]
 *** xref:consumingPatterns-valuesFiles.adoc#values[Pattern Values Files]
-*** xref:consumingPatterns-valuesFiles.adoc#valuesSecret[Pattern Secret Values Template]
+//*** xref:consumingPatterns-valuesFiles.adoc#valuesSecret[Pattern Secret Values Template]
 *** xref:patternsOperator.adoc#features[About the Patterns Operator]
 *** xref:patternsWrapperScript.adoc#about[About the Patterns.sh wrapper]
 *** xref:patternsWrapperScript.adoc#help[Wrapper Help]
