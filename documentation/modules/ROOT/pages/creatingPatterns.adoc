@@ -150,9 +150,25 @@ The URL at this point can be used to pull out the name (pkg), catalog, channel e
 == Introducing new helm charts
 
 The easiest way to start with new helm charts is to copy and paste from the example charts in multicloud-gitops.
+Each helm chart gets added as an argoCD application:
 
+[source,yaml]
+----
+  applications:
+    golang-external-secrets:
+      name: golang-external-secrets
+      namespace: golang-external-secrets
+      project: hub
+      path: common/golang-external-secrets 
 
+    cnv: # arbitrary
+      name: cnv # name of argoCD applcation
+      namespace: openshift-cnv
+      project: cnv # argoCD project 
+      path: charts/all/cnv # relative path to the chart 
+----
 
+Convention puts the helm charts for the validated-pattern under `charts/`.
 
 == Chaining configuration into the charts.
 
