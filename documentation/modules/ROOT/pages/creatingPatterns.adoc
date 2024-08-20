@@ -30,7 +30,7 @@ What's the role of the **common** repository?
 ** Operator CRDs and other assets
 ** Various utility scripts
 
-What's in common? 
+What's in common?
 
 > NOTE: The common repository is where all the common manifests for the Validated Patterns framework live
 
@@ -79,6 +79,6 @@ image::create-where2start.png[]
 
 One of the first things we should do before embarking on creating a pattern is to identify a problem to solve. This can come from an existing customer problem or an idea on how we can showcase some of our Red Hat products working together. You can use one of our simplest validated patterns, multicloud gitops, as a starting point by using the template to create a new Git repository in your local GitHub account.  You might already have an existing demo that you can use and convert it to use the Validated Pattern framework.
 
-The next step is to identify the technology components that you will need.  In the case of an existing demo you might already know which components are part of the pattern. 
+The next step is to identify the technology components that you will need.  In the case of an existing demo you might already know which components are part of the pattern.
 
-The final step is to ensure that the configuration of those components, and the integration points, are handled in the pattern.  
+The final step is to ensure that the configuration of those components, and the integration points, are handled in the pattern.
