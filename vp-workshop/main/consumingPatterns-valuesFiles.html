@@ -248,9 +248,6 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="creatingPatterns.html#creating">Creation Process</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="creatingPatterns.html#exercises">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -300,9 +297,6 @@
     <a class="nav-link" href="secrets-loading.html#secretLoading">Secrets Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets-loading.html#valuesecret">Secrets Template in the Patterns</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="secrets-loading.html#policy">Default Password Policy</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -316,9 +310,6 @@
     <a class="nav-link" href="secrets-loading.html#awscreds">Loading AWS Credentials</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -338,9 +329,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="selfContained.html#thoughts">Additional Thoughts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="selfContained.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -397,9 +385,6 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="gitopsRoughEdges.html">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -415,6 +400,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="multipleClusters.html#why">Why manage multiple clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="multipleClusters.html#challenges">Multi-Cluster Challenges</a>
   </li>
 </ul>
   </li>
@@ -645,70 +633,6 @@ Sometimes we may need to override a default - an example of this is needing to c
 </table>
 </div>
 </blockquote>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="valuesSecret"><a class="anchor" href="#valuesSecret"></a>values-secret template</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Each pattern has a template in the root of the repository named <code>values-secret.template.yaml</code> that provides the secrets required for the pattern to deploy. Not all patterns require secrets, so it is very likely that the generic secrets for <code>config-demo</code> and <code>hello-world</code> exist.</p>
-</div>
-<div class="paragraph">
-<p>In order to define custom secrets that aren&#8217;t stored in git - we need ot copy the template to our <code>$HOME</code> directory.</p>
-</div>
-<div class="paragraph">
-<p>INFORMATION: The following examples assume you have forked <a href="https://github.com/validatedpatterns/multicloud-gitops">multi-cloud gitops</a> to your GitHub organization.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp values-secret.yaml.template ~/values-secret-multicloud-gitops.yaml</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Let&#8217;s take a look at the contents of the file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># A more formal description of this format can be found here:
-# https://github.com/validatedpatterns/common/tree/main/ansible/roles/vault_utils#values-secret-file-format
-
-version: "2.0"
-# Ideally you NEVER COMMIT THESE VALUES TO GIT (although if all passwords are
-# automatically generated inside the vault this should not really matter)
-
-secrets:
-  - name: config-demo
-    vaultPrefixes:
-    - global
-    fields:
-    - name: secret
-      onMissingValue: generate
-      vaultPolicy: validatedPatternDefaultPolicy
-
-  # If you use clusterPools you will need to uncomment the following lines
-  #- name: aws
-  #  fields:
-  #  - name: aws_access_key_id
-  #    ini_file: ~/.aws/credentials
-  #    ini_section: default
-  #    ini_key: aws_access_key_id
-  #  - name: aws_secret_access_key
-  #    ini_file: ~/.aws/credentials
-  #    ini_key: aws_secret_access_key
-  #- name: publickey
-  #  fields:
-  #  - name: content
-  #    path: ~/.ssh/id_rsa.pub
-  #- name: privatekey
-  #  fields:
-  #  - name: content
-  #    path: ~/.ssh/id_rsa
-  #- name: openshiftPullSecret
-  #  fields:
-  #  - name: content
-  #    path: ~/.pullsecret.json</code></pre>
-</div>
 </div>
 </div>
 </div>

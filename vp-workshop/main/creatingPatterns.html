@@ -248,9 +248,6 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="#creating">Creation Process</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="#exercises">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -300,9 +297,6 @@
     <a class="nav-link" href="secrets-loading.html#secretLoading">Secrets Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets-loading.html#valuesecret">Secrets Template in the Patterns</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="secrets-loading.html#policy">Default Password Policy</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -316,9 +310,6 @@
     <a class="nav-link" href="secrets-loading.html#awscreds">Loading AWS Credentials</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -338,9 +329,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="selfContained.html#thoughts">Additional Thoughts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="selfContained.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -397,9 +385,6 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="gitopsRoughEdges.html">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -415,6 +400,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="multipleClusters.html#why">Why manage multiple clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="multipleClusters.html#challenges">Multi-Cluster Challenges</a>
   </li>
 </ul>
   </li>
@@ -589,16 +577,46 @@
 <h2 id="common"><a class="anchor" href="#common"></a>Understanding common</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>What&#8217;s the role of the <strong>common</strong> repository?
-* The core components that make up the Validated Patterns framework are contained in the common repository
-* Including:
-<strong> OpenShift GitOps configurations
-</strong> RHACM configuration and Global Policies
-<strong>* Support for </strong>clusterGroup<strong> and </strong>GitOps<strong> policies
-</strong> Validated Pattern build scripts and Makefiles
-<strong> Secrets Management (Hashicorp Vault)
-</strong> Operator CRDs and other assets
-** Various utility scripts</p>
+<p>What&#8217;s the role of the <strong>common</strong> repository?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The core components that make up the Validated Patterns framework are contained in the common repository</p>
+</li>
+<li>
+<p>Including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift GitOps configurations</p>
+</li>
+<li>
+<p>RHACM configuration and Global Policies</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Support for <strong>clusterGroup</strong> and <strong>GitOps</strong> policies</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Validated Pattern build scripts and Makefiles</p>
+</li>
+<li>
+<p>Secrets Management (Hashicorp Vault)</p>
+</li>
+<li>
+<p>Operator CRDs and other assets</p>
+</li>
+<li>
+<p>Various utility scripts</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>What&#8217;s in common?</p>
@@ -685,6 +703,12 @@ The common repository is where all the common manifests for the Validated Patter
 <p>Continue to maintain Makefiles, Ansible scripts and other tools in this repo in support of deploying patterns</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>You may be wondering - <strong>why</strong>?</p>
+</div>
+<div class="paragraph">
+<p>We want to maximize modularity in the framework. This will reduce our reliance on the common repository as it is today and will decrease the footprint and complexity of the patterns.</p>
 </div>
 </div>
 </div>

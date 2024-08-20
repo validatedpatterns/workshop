@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: Validated Patterns Workshop</title>
     <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/multipleClusters.html">
-    <link rel="prev" href="gitopsRoughEdges.html">
+    <link rel="prev" href="gitops-roughedges-syncwave-hooks.html">
     <link rel="next" href="additionalTopics.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -248,9 +248,6 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="creatingPatterns.html#creating">Creation Process</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="creatingPatterns.html#exercises">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -300,9 +297,6 @@
     <a class="nav-link" href="secrets-loading.html#secretLoading">Secrets Loading</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets-loading.html#valuesecret">Secrets Template in the Patterns</a>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="secrets-loading.html#policy">Default Password Policy</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -316,9 +310,6 @@
     <a class="nav-link" href="secrets-loading.html#awscreds">Loading AWS Credentials</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="secrets.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -338,9 +329,6 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="selfContained.html#thoughts">Additional Thoughts</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="selfContained.html">Exercises</a>
   </li>
 </ul>
   </li>
@@ -397,9 +385,6 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="gitopsRoughEdges.html">Exercises</a>
-  </li>
 </ul>
   </li>
 </ul>
@@ -415,6 +400,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#why">Why manage multiple clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#challenges">Multi-Cluster Challenges</a>
   </li>
 </ul>
   </li>
@@ -571,10 +559,70 @@
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="challenges"><a class="anchor" href="#challenges"></a>Multi-Cluster Challenges</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/multicluster-challenges.png" alt="multicluster challenges">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This increase of clusters presents challenges to organizations responsible for managing these clusters.</p>
+</li>
+<li>
+<p>The infrastructure/operations teams that are responsible for ensuring the deployment, configuration and management of these clusters will need the proper tools.</p>
+</li>
+<li>
+<p>The DevOps teams will need clusters to develop their applications and will have increasing requests for more resources and consistency across clusters.</p>
+</li>
+<li>
+<p>The Organization as a whole will need to have multiple target environments in which to deploy clusters.</p>
+</li>
+<li>
+<p>In high volume scenarios the clusters might need to be created in cloud providers depending on cost and resource availability.</p>
+</li>
+<li>
+<p>This presents a challenge where a central management tool is needed to ensure that operators can deploy, maintain and manage resources.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="options"><a class="anchor" href="#options"></a>Multi-Cluster Management Options</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>You can do it manually using custom scripts</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This presents many challenges  as scripts are homegrown and maintainability can become an issue.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You can use ArgoCD to a degree</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ArgoCD’s forte is to declaratively deploy applications onto a Kubernetes cluster not manage clusters.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Use Red Hat Advanced Cluster Management for Kubernetes which is built to manage multiple clusters</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="gitopsRoughEdges.html" class="query-params-link">Exercises</a></span>
+  <span class="prev"><a href="gitops-roughedges-syncwave-hooks.html" class="query-params-link">Sync Waves and Hooks</a></span>
   <span class="next"><a href="additionalTopics.html" class="query-params-link">10. Additional Resources</a></span>
 </nav>
 </article>
