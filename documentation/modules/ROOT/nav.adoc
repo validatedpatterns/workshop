@@ -47,8 +47,6 @@
 *** xref:patternsWrapperScript.adoc#help[Wrapper Help]
 *** xref:repoFork.adoc#about[To Fork or Not to Fork]
 *** xref:consumingPatterns.adoc#exercises[Exercises]
-
-// Also Chapter 5 - Breaking up for readability
 ** xref:creatingPatterns.adoc[Creating a Validated Pattern]
 *** xref:creatingPatterns.adoc#objectives[Topic Objectives]
 *** xref:creatingPatterns.adoc#common[Understanding Common]
@@ -101,33 +99,30 @@
 
 //Chapter 9 - Working with Multiple Clusters 
 * xref:multipleClusters.adoc[9. Working with Multiple Clusters]
+** xref:multipleClusters.adoc#objectives[Topic Objectives]
+** xref:multipleClusters.adoc[]
 
 //Appendix - Additional Resources
-* xref:additionalTopics.adoc[12. Additional Resources]
-//imperative
+* xref:additionalTopics.adoc[10. Additional Resources]
 ** xref:imperative.adoc[Imperative Framework]
-*** xref:imperative.adoc[Topic Objectives]
-//helm 
+*** xref:imperative.adoc#objectives[Topic Objectives]
+*** xref:imperative.adoc#versus[Imperative v. Declarative Actions]
+*** xref:imperative.adoc#declaring[Declaring an imperative action]
+*** xref:imperative.adoc#cron-example[Imperative cronJob example]
+** xref:clusterDomains.adoc[Handling Cluster Domains]
+*** xref:clusterDomains.adoc#objectives[Topic Objectives]
+*** xref:clusterDomains.adoc#limitations[Limitations]
+*** xref:clusterDomains.adoc#variables[Variables set by the Pattern]
+** xref:multisource.adoc[Multi Source Patterns]
+*** xref:multisource.adoc#objectives[Topic Objectives]
+*** xref:multisource.adoc#meaning[What does it mean to use multisource?]
+*** xref:multisource.adoc#how[How it works]
+*** xref:multisource.adoc#status[Current Status]
+*** xref:multisource.adoc#ux[User Experience]
+*** xref:multisource.adoc#helmRepo[Helm Chart Repository]
+*** xref:multisource.adoc#chart-release[Creating a chart release]
+*** xref:multisource.adoc#next[Next Steps]
 ** xref:helm.adoc[Helm for Fun and Profit]
 *** xref:helm.adoc#objectives[Topic Objectives]
-//troubleshooting
 ** xref:troubleshooting.adoc[Troubleshooting]
 *** xref:troubleshooting.adoc#objectives[Topic Objectives]
-
-// Keeping track of what's unaccounted for  in toc
-// Handling Cluster Domains 
-* xref:clusterDomains.adoc[xx. Handling Cluster Domains]
-** xref:clusterDomains.adoc#objectives[Topic Objectives]
-** xref:clusterDomains.adoc#limitations[Limitations]
-** xref:clusterDomains.adoc#variables[Variables set by the Pattern]
-
-// MultiSource
-* xref:multisource.adoc[xx. Multi Source Patterns]
-** xref:multisource.adoc#objectives[Topic Objectives]
-** xref:multisource.adoc#meaning[What does it mean to use multisource?]
-** xref:multisource.adoc#how[How it works]
-** xref:multisource.adoc#status[Current Status]
-** xref:multisource.adoc#ux[User Experience]
-** xref:multisource.adoc#helmRepo[Helm Chart Repository]
-** xref:multisource.adoc#chart-release[Creating a chart release]
-** xref:multisource.adoc#next[Next Steps]
