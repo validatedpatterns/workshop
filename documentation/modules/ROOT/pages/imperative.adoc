@@ -19,7 +19,7 @@ Imperative is where we take action on the cluster. A simplified way of thinking 
 
 During the development of the imperative framework there as a realization that there was a generalized need to support a limited mechanism for running these imperative actions in the most declarative way possible. 
 
-We needed an autoamted, self-contained and supportable mechanism to interact with elements of OpenShift that could not be predicted prior to installation.
+We needed an automated, self-contained and supportable mechanism to interact with elements of OpenShift that could not be predicted prior to installation.
 
 Some examples of when this is necessary:
 

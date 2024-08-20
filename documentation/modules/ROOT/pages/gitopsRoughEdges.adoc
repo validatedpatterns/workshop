@@ -33,7 +33,7 @@ We have options!
 |===
 |**Resource Type**|**Explanation**
 | `kubernetes Jobs`
-| A job creaes one or more pods and will continue to retry execution of the pods until a specified number of them successfully terminate
+| A job creates one or more pods and will continue to retry execution of the pods until a specified number of them successfully terminate
 |`kubernetes cronJobs`
 | A cronJob creates jobs on a repeating schedule and uses the cron job syntax
 |`Sync-Phases`

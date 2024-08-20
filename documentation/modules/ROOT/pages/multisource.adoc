@@ -14,7 +14,7 @@ include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 Using multiple-sources in our ArgoCD applications gives the Patterns framework a lot of flexibility in how applications are deployed. In the code snippet below we can see that we have a chart called `acm` where we have our normal values getting assigned, but also using values from another repository - in this case `https://github.com/f00/multicloud-gitops`
 
 [source,yaml]
-====
+----
 # MULTISOURCE
 sources:
 - ref: patternref
@@ -34,12 +34,12 @@ sources:
 	- $patternref/values-4.13-hub.yaml
 	parameters:
 	...
-====
+----
 
-With a single source we can only apply values files from within the repository, or declare them within the `applications` key. The primary issue with this approach is readability and reusability. The values file grows to a point where it is hard to follow the changes being made. 
+With a single source we can only apply values files from within the repository, or declare them within the `applications` key. The primary issue with this approach is readability and reusability. The values file grows to a point where it is hard to follow the changes being made.
 
 [source,yaml]
-====
+----
 # SINGLE SOURCE
 source:
   repoURL: https://github.com/foo/multicloud-gitops
@@ -55,7 +55,7 @@ source:
   	- /values-4.13-hub.yaml
 	parameters:
 	...
-====
+----
 
 [#how]
 
@@ -73,20 +73,23 @@ Here's what it would look like:
 
 **Original Configuration:**
 [source,yaml]
-====
+----
 acm:
   name: acm
   path: common/acm
-====
+----
 
 **Updated Configuration:**
 [source,yaml]
-====
+----
 acm:
   name: acm
   chart: acm
   chartVersion: 0.0.*
-====
+  # Tweak the default below to point to an alternative chart repo (OCI registries are
+  # also supported)
+  # repoURL: https://charts.validatedpatterns.io
+----
 
 [#status]
 === Status
@@ -107,12 +110,12 @@ image::multisource-config.png[]
 === Helm Chart Repository
 
 [.INFORMATION]
-.How does it work? 
+.How does it work?
 ====
 * `common/` now has a github workflow which is triggered at every commit to main **chart-branches.yaml**
 * If any commit changes one of the charts (except `operator-install`) the corresponding branch in common for that chart will be updated (`git subtree split`)
 * This makes it so that the **link:https://github.com/validatedpatterns/common/tree/hashicorp-vault-main-single-chart[hashicorp-vault-main-single-chart]** branch only contains the code for the hashicrop-vault chart
-* Then it takes that hashicorp-vault-main-single-chart branch and pushes it out to the `validatedpatterns/hashicorp-vault` git repository 
+* Then it takes that hashicorp-vault-main-single-chart branch and pushes it out to the `validatedpatterns/hashicorp-vault` git repository
 ====
 
 === TL;DR
