@@ -725,13 +725,206 @@ The common repository is where all the common manifests for the Validated Patter
 </div>
 </div>
 <div class="paragraph">
-<p>One of the first things we should do before embarking on creating a pattern is to identify a problem to solve. This can come from an existing customer problem or an idea on how we can showcase some of our Red Hat products working together. You can use one of our simplest validated patterns, multicloud gitops, as a starting point by using the template to create a new Git repository in your local GitHub account.  You might already have an existing demo that you can use and convert it to use the Validated Pattern framework.</p>
+<p>One of the first things we should do before embarking on creating a pattern is to identify a problem to solve.
+This can come from an existing customer problem or an idea on how we can showcase some of our Red Hat products working together.
+You can use one of our simplest validated patterns, multicloud gitops, as a starting point by using the template to create a new Git repository in your local GitHub account.
+You might already have an existing demo that you can use and convert it to use the Validated Pattern framework.</p>
 </div>
 <div class="paragraph">
-<p>The next step is to identify the technology components that you will need.  In the case of an existing demo you might already know which components are part of the pattern.</p>
+<p>The next step is to identify the technology components that you will need.
+In the case of an existing demo you might already know which components are part of the pattern.</p>
 </div>
 <div class="paragraph">
 <p>The final step is to ensure that the configuration of those components, and the integration points, are handled in the pattern.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_naming"><a class="anchor" href="#_setting_up_naming"></a>Setting up naming</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two names that exist a pattern: The <code>pattern</code> name  and the <code>clusterGroup</code> name.
+Best practice is to align <code>pattern</code> with the repository title as it drives file naming for secrets file: <code>values-secrets-{pattern}.yaml</code></p>
+</div>
+<div class="paragraph">
+<p>clusterGroup is most relevant when you have multiple clusters. Otherwise you can rely on the default <code>hub</code> group.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  global:
+    pattern: multicloud-gitops
+    options:
+      useCSV: false
+      syncPolicy: Automatic
+      installPlanApproval: Automatic
+  main:
+    clusterGroupName: hub</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_to_the_bill_of_materials"><a class="anchor" href="#_adding_to_the_bill_of_materials"></a>Adding to the Bill of materials</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three major resources you can add: Operators, Applications (helm charts) and ansible (imperative) scripts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introducing_new_operators"><a class="anchor" href="#_introducing_new_operators"></a>Introducing new operators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Operators can be simply added to the clusterGroup as subscriptions</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  subscriptions:
+    acm:
+      name: advanced-cluster-management
+      namespace: open-cluster-management
+      channel: release-2.9
+    s3:
+      name: ack-s3-controller
+      namespace: ack-system
+      channel: alpha
+      source: community-operators
+    cte:
+      name: cte-k8s-operator
+      namespace: openshift-operators
+      channel: stable
+      source: certified-operators</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To find the <strong>correct</strong> names the easiest way to do this is to jump into the console, find the operator, get to the install screen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/operator-install.png" alt="operator install">
+</div>
+</div>
+<div class="paragraph">
+<p>The URL at this point can be used to pull out the name (pkg), catalog, channel etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introducing_new_helm_charts"><a class="anchor" href="#_introducing_new_helm_charts"></a>Introducing new helm charts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to start with new helm charts is to copy and paste from the example charts in multicloud-gitops.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chaining_configuration_into_the_charts"><a class="anchor" href="#_chaining_configuration_into_the_charts"></a>Chaining configuration into the charts.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One key element of validated patterns is a structured set of variable overrides.
+These overrides are key to allowing the template to be kept as 'DRY' as possible when configuring.
+For this context it&#8217;s important to understand the evaluation order:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The default values defined in the chart (or sub charts).</p>
+</li>
+<li>
+<p><code>values-global.yaml</code> file</p>
+</li>
+<li>
+<p>Values within clusterGroup files (e.g. `values-hub.yaml)</p>
+</li>
+<li>
+<p>Values override files with precedence for the (top/bottom) of the valid list</p>
+</li>
+<li>
+<p>Values overrides shown in individual application definitions</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Default files installed in a chart</strong></p>
+</div>
+<div class="paragraph">
+<p>All helm charts <strong>MUST</strong> contain a <code>values.yaml</code> file.
+Values that are defined here should be considered the 'base' consideration.
+While it&#8217;s possible to not define a value here, yet use it in the chart, it is strongly recommended sensible defaults are included.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>values-global.yaml</code> file</strong></p>
+</div>
+<div class="paragraph">
+<p>Values here are applied to every argocd application as it is picked up directly by the validated patterns operator.
+The values here are also usable in the <code>clusterGroup</code> files</p>
+</div>
+<div class="paragraph">
+<p><strong>ClusterGroup</strong> files overrides</p>
+</div>
+<div class="paragraph">
+<p>Values can directly be used within the context of files such as <code>values-hub.yaml</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  letsencrypt:
+    region: ''
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # staging URL
+    # server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: chris@thebutlers.me
+  clusterGroup:
+    name: hub
+    isHubCluster: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Values override files</strong></p>
+</div>
+<div class="paragraph">
+<p><code>clusterGroup`s define an override file list which is evaluated in order.
+The cluster overrides files can take of the variables defined in `values-global.yaml</code> as well as metadata assembled by the operator, OpenShift and Red Hat Advanced Cluster Management for Kubernetes.</p>
+</div>
+<div class="paragraph">
+<p>These dynamic variables allow abstraction from variability between OpenShift installation. <code>storageClasses</code> varying across <code>clusterPlatform</code> is a clear example.</p>
+</div>
+<div class="paragraph">
+<p>The order of operations can be changed based on uses requirements easily with the list.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  overrides:
+    - '/overrides/values-{{ $.Values.global.clusterPlatform }}.yaml'
+    - '/overrides/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.global.clusterVersion }}.yaml'
+    - '/overrides/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.clusterGroup.name }}.yaml'
+    - '/overrides/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Discovery activity</strong>: Logging into console for the <code>cluster</code> OpenShift gitops.
+Examine the root application to discover what variables have been provided to ArgoCD.</p>
+</div>
+<div class="paragraph">
+<p><strong>Individual application overrides</strong></p>
+</div>
+<div class="paragraph">
+<p>Individual applications should be reserved for use-cases where there is risk of conflict across multiple charts in the same application group.
+They should be viewed as absolutely hard coded into the pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">  applications:
+    coffeeshop-test:
+      name: quarkuscoffeeshop-demo
+      namespace: quarkuscoffeeshop-demo
+      project: quarkuscoffeeshop-demo
+      path: charts/store/quarkuscoffeeshop-charts
+      overrides:
+      - name: ocp_auth.bind_dn
+        value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
+      - name: ocp_auth.bind_password
+        value: "supersecret"</code></pre>
+</div>
 </div>
 </div>
 </div>
