@@ -25,10 +25,10 @@ image::multicluster-challenges.png[]
 
 * This increase of clusters presents challenges to organizations responsible for managing these clusters.
 * The infrastructure/operations teams that are responsible for ensuring the deployment, configuration and management of these clusters will need the proper tools.
-* The DevOps teams will need clusters to develop their applications and will have increasing requests for more resources and consistency across clusters. 
-* The Organization as a whole will need to have multiple target environments in which to deploy clusters.  
-* In high volume scenarios the clusters might need to be created in cloud providers depending on cost and resource availability.  
-* This presents a challenge where a central management tool is needed to ensure that operators can deploy, maintain and manage resources. 
+* The DevOps teams will need clusters to develop their applications and will have increasing requests for more resources and consistency across clusters.
+* The Organization as a whole will need to have multiple target environments in which to deploy clusters.
+* In high volume scenarios the clusters might need to be created in cloud providers depending on cost and resource availability.
+* This presents a challenge where a central management tool is needed to ensure that operators can deploy, maintain and manage resources.
 
 
 [#options]
@@ -37,7 +37,7 @@ image::multicluster-challenges.png[]
 * You can do it manually using custom scripts
 ** This presents many challenges  as scripts are homegrown and maintainability can become an issue.
 * You can use ArgoCD to a degree
-** ArgoCD’s forte is to declaratively deploy applications onto a Kubernetes cluster not manage clusters.  
+** ArgoCD's forte is to declaratively deploy applications onto a Kubernetes cluster not manage clusters.
 * Use {rhacm} which is built to manage multiple clusters
 
 [#rhacm]
@@ -49,19 +49,18 @@ For more information visit: link:https://www.redhat.com/en/technologies/manageme
 
 image::multicluster-rhacm-value.png[]
 
-* Multi-Cluster Lifecycle Environment: 
-** You can centrally create, update and delete Kubernetes clusters across multiple private and public clouds 
+* Multi-Cluster Lifecycle Environment:
+** You can centrally create, update and delete Kubernetes clusters across multiple private and public clouds
 ** Search, find and modify any kubernetes resource across the entire domain.
 ** Quickly troubleshoot and resolve issues across your federated domain
 
 * Policy Driven Governance
 ** Centrally set & enforce policies for security, applications, & infrastructure
-** Quickly visualize detailed auditing on configuration of apps and clusters 
+** Quickly visualize detailed auditing on configuration of apps and clusters
 ** Built-in CIS compliance policies and audit checks
 ** Immediate visibility into your compliance posture based on your defined standards
 
 * Advanced Application Lifecycle
-** Easily Deploy Applications at Scale 
+** Easily Deploy Applications at Scale
 ** Deploy Applications from Multiple Sources
 ** Quickly visualize application relationships across clusters and those that span clusters
-
