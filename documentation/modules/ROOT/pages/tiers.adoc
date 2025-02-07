@@ -28,19 +28,19 @@ Ultimately, the Validated Patterns team don't want to be the gatekeepers of all 
 a| * entrypoint for onboarding your Pattern
   * able to deploy onto a freshly install OpenShift cluster without modifications or tuning
   * must include a top-level README
-| https://validatedpatterns.io/learn/sandbox
+| https://validatedpatterns.io/contribute/sandbox/
 
 |`Tested`
 a| * must include a standardized architecture diagram using (or conforming to) the standard Validated Patterns tooling
   * must ensure the test plan passes at least once per quarter
   * must include a written guide for others to follow when demonstrating the platform 
-| https://validatedpatterns.io/learn/tested
+| https://validatedpatterns.io/contribute/tested/
 
 |`Maintained`
 a| * functional on all currently supported/extended update support (EUS) versions of OpenShift
   * must fix breakage in a timely manner
   * must document their support policy
-| https://validatedpatterns.io/learn/maintained
+| https://validatedpatterns.io/contribute/maintained/
 
 |===
 
