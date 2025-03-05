@@ -3,5 +3,14 @@ title: Validated Patterns Workshop
 version: main
 nav:
   - modules/ROOT/nav.adoc
+  - modules/2_introduction/nav.adoc
+  - modules/3_landscape/nav.adoc
+  - modules/4_tiers/nav.adoc
+  - modules/5_validatedpatterns/nav.adoc
+  - modules/6_secrets/nav.adoc
+  - modules/7_selfcontained/nav.adoc
+  - modules/8_roughedges/nav.adoc
+  - modules/9_multipleclusters/nav.adoc
+  - modules/10_addtlresources/nav.adoc
 
 start_page: ROOT:index.adoc
