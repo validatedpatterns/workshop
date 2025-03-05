@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Validated Patterns Workshop</title>
+    <link rel="canonical" href="https://play.validatedpatterns.io/vp-workshop/main/2_introduction/patterns.html">
+    <link rel="prev" href="../1_gettingStarted/getting-started.html">
+    <link rel="next" href="patternsDemo.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+<link rel="icon" href="../../../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" style="font-size: 20px; color: white"
+        href="https://play.validatedpatterns.io">
+        <img src="../../../_/img/validated-patterns.png" height="35px" alt="Red Hat Validated Patterns">&nbsp; Validated Patterns Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Patterns</a>
+          <div class="navbar-dropdown">
+          <a class="navbar-item" target="_blank" href="https://validatedpatterns.io/">Validated Patterns Home</a>
+          <a class="navbar-item" target="_blank" href="https://github.com/validatedpatterns">GitHub</a>
+          <a class="navbar-item" target="_blank" href="https://validatedpatterns.io/ci">Status</a>
+          <a class="navbar-item" target="_blank" href="https://validatedpatterns.io/blog">Blog</a>
+          <a class="navbar-item" target="_blank" href="https://www.youtube.com/@teamvalidatedpatterns737">VP YouTube Channel</a>
+        </div>
+          </div>
+
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Workshops</a>
+          <div class="navbar-dropdown">
+          <a class="navbar-item" target="_blank" href="https://openshiftdemos.github.io/openshift-gitops-workshop">OpenShift GitOps Workshop</a>
+          <a class="navbar-item" target="_blank" href="https://openshiftdemos.github.io/argo-rollouts-workshop">Argo Rollouts Workshop</a>
+          </div>
+        </div> 
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://red.ht/aoa">Ask an OpenShift Admin</a>
+            <a class="navbar-item" target="_blank" href="https://red.ht/ggg">GitOps Guide to the Galaxy</a>
+            <a class="navbar-item" target="_blank" href="https://commons.openshift.org/">OpenShift Commons</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
+            <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
+          </div>
+        </div> 
+
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vp-workshop" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html" class=" query-params-link">Validated Patterns Workshop</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Welcome to the Validated Patterns Workshop</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../1_gettingStarted/getting-started.html">1. Getting Started</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../1_gettingStarted/getting-started.html#prereqs">Pre-Requisites</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="patterns.html">2. Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#goals">Validated Patterns Business Goals</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#benefits">Benefits of Validated Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#batteries">Batteries Included</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#whotheyfor">Who are the Patterns for</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patternsDemo.html">Demo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/landscape.html">3. Existing Pattern Landscape</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../3_landscape/landscape.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../3_landscape/landscape.html#patterns">Available Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../3_landscape/landscape.html#website">Where to find existing Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/partners.html">Partners</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/partners.html#intel">Intel</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../3_landscape/partners.html#intel-mcgo">Intel MultiCloud GitOps</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../3_landscape/partners.html#intel-md">Intel Medical Diagnosis</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/partners.html#pwx-mcgo">Portworx</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../3_landscape/partners.html#pwx-mcgo">Portworx</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/partners.html#cisco-pwx-mcgo">Cisco</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../3_landscape/partners.html#cisco-pwx-mcgo">Cisco</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../3_landscape/partners.html#veeam-mcgo">Veeam/Kasten</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../3_landscape/partners.html#veeam-mcgo">Veeam/Kasten</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../4_tiers/tiers.html">4. Pattern Tiers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../4_tiers/tiers.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../4_tiers/tiers.html#about">About the Pattern Tiers</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../4_tiers/tiers.html#resources">Additional Resources</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html">5. Validated Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html">Consuming a Validated Pattern</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html#workflow">Validated Pattern Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html#layering">Solution Layering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns.html#multiArgos">Multiple Argo&#8217;s</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/consumingPatterns-valuesFiles.html#values">Pattern Values Files</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/patternsOperator.html#features">About the Patterns Operator</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/patternsWrapperScript.html#about">About the Patterns.sh wrapper</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/patternsWrapperScript.html#help">Wrapper Help</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/repoFork.html#about">To Fork or Not to Fork</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../5_validatedpatterns/creatingPatterns.html">Creating a Validated Pattern</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/creatingPatterns.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/creatingPatterns.html#common">Understanding Common</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../5_validatedpatterns/creatingPatterns.html#creating">Creation Process</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../6_secrets/secrets.html">6. Secrets Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/secrets.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/secrets.html#secretsGitops">Secrets Management and GitOps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#esoVault">ESO and Vault</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#approaches">Approaches</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#encryptedSecrets">Encrypted Secrets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#secretReferences">References to Secrets</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#vaultconcepts">Vault Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/pattern-secrets-management.html#esoconcepts">ESO Concepts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../6_secrets/secrets-loading.html#secretLoading">Secrets Loading</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../6_secrets/secrets-loading.html">Secrets Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../6_secrets/secrets-loading.html#valuesecret">Secrets Template in the Patterns</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../6_secrets/secrets-loading.html#secretexamples">Secret Examples</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../7_selfcontained/selfContained.html">7. Self Contained Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../7_selfcontained/selfContained.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../7_selfcontained/selfContained.html#thoughts">Additional Thoughts</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html">8. GitOps Rough Edges</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html#declarativeSync">Declarative Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html#imperative">Imperative Actions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html#jobs">Kubernetes Jobs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../8_roughedges/gitopsRoughEdges.html#cron">Kubernetes cronJobs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../8_roughedges/gitops-roughedges-syncwave-hooks.html">Sync Waves and Hooks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../8_roughedges/gitops-roughedges-syncwave-hooks.html#using_syncwaves">Using Sync Waves</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../8_roughedges/gitops-roughedges-syncwave-hooks.html#exploring_the_manifests_waves">Exploring Sync Wave Manifests</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../8_roughedges/gitops-roughedges-syncwave-hooks.html#using_resource_hooks">Using Resource Hooks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../8_roughedges/gitops-roughedges-syncwave-hooks.html#exploring_the_manifests_hooks">Exploring Resource Hook Manifests</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../9_multipleclusters/multipleClusters.html">9. Working with Multiple Clusters</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../9_multipleclusters/multipleClusters.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../9_multipleclusters/multipleClusters.html#why">Why manage multiple clusters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../9_multipleclusters/multipleClusters.html#challenges">Multi-Cluster Challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../9_multipleclusters/multipleClusters.html#rhacm">Red Hat Advanced Cluster Management for Kubernetes</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../10_addtlresources/additionalTopics.html">10. Additional Resources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../10_addtlresources/imperative.html">Imperative Framework</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/imperative.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/imperative.html#versus">Imperative v. Declarative Actions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/imperative.html#declaring">Declaring an imperative action</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/imperative.html#cron-example">Imperative cronJob example</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../10_addtlresources/clusterDomains.html">Handling Cluster Domains</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/clusterDomains.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/clusterDomains.html#limitations">Limitations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/clusterDomains.html#variables">Variables set by the Pattern</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../10_addtlresources/multisource.html">Multi Source Patterns</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#objectives">Topic Objectives</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#meaning">What does it mean to use multisource?</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#how">How it works</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#status">Current Status</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#ux">User Experience</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#helmRepo">Helm Chart Repository</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#chart-release">Creating a chart release</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../10_addtlresources/multisource.html#next">Next Steps</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Validated Patterns Workshop</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Validated Patterns Workshop</span>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Validated Patterns Workshop</a></li>
+    <li><a href="patterns.html">2. Introduction</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/validatedpatterns/workshop/edit/main/documentation/modules/2_introduction/pages/patterns.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_topic_objectives"><a class="anchor" href="#_topic_objectives"></a>Topic Objectives</h2>
+<div class="sectionbody">
+<div id="objectives" class="paragraph">
+<p>In this topic we will discuss:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What is a Validated Pattern?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain high level benefits provided by Validated Patterns</p>
+</li>
+<li>
+<p>Discuss what is included in the patterns initiative</p>
+</li>
+<li>
+<p>Detail the difference between a community and validated patterns</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Who are Validated Patterns for?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Explain the high level benefit for each persona</p>
+</li>
+<li>
+<p>Clarify the requirements to become validated</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Where can you keep up to date or point people to find more information?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what"><a class="anchor" href="#what"></a>What are Validated Patterns?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validated Patterns are an evolution of reference architectures. Each pattern is given a lifecycle when it is added to Red Hat&#8217;s continuous integration (CI) system because we&#8217;re testing against the latest version of operators, OpenShift releases and across multiple public cloud environments.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/Linux-Penguin-Evolution-1.png" alt="evolution">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="goals"><a class="anchor" href="#goals"></a>Business Goals</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every organization is facing the need to transform itself into a digital business. It&#8217;s part of an evolution to help <strong>accelerate innovation</strong> by making application development faster - fueled with data insights, and enabled through technologies like containers, kubernetes and artificial intelligence/machine learning.</p>
+</div>
+<div class="paragraph">
+<p>In order to be successful, they know they must also look at how to be more <strong>operationally agile</strong> and <strong>efficient</strong> in order to quickly meet business needs. Hybrid-Cloud computing coupled with these new technologies is helping create new opportunities to achieve these goals.</p>
+</div>
+<div class="paragraph">
+<p>Validated Patterns are focused on customer solutions and Proof-Of-Concepts (POC&#8217;s).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-goals.png" alt="introduction goals">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="benefits"><a class="anchor" href="#benefits"></a>Benefits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Red Hat’s validated patterns are a collection of repositories that show a customers use case in the form of Kubernetes Resources (helm charts, kustomize, primitive objects) that describe an hybrid cloud stack declaratively and comprehensively; from its services down to the supporting infrastructure. Validated Patterns facilitate complex, highly reproducible deployments and are ideal for operating these deployments at scale using GitOps operational practices.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-pattern-benefits.png" alt="introduction pattern benefits">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a GitOps model to deliver the use case as code</p>
+</li>
+<li>
+<p>Use as a POC, modified to fit a particular need that you can evolve into a real deployment.</p>
+</li>
+<li>
+<p>Highly reproducible - great for operating at scale</p>
+</li>
+<li>
+<p>Open for collaboration, so anyone can suggest improvements, contribute to them or use them as the Git Repositories are all upstream</p>
+</li>
+<li>
+<p>Can be modified for customers needs.  If you would like to swap out a component, use Ceph Storage instead of S3, it is as easy as commenting out sections and including other repos.</p>
+</li>
+<li>
+<p>Tested.  Once made a validated pattern, the use case is included into Red Hat’s CI and continues to be tested across product versions while the pattern remains active.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="batteries"><a class="anchor" href="#batteries"></a>Batteries Included</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validated Patterns are a "batteries included" solution. This means that wherever you start with the patterns framework a core and configurable set of components are delivered out of the box.</p>
+</div>
+<div class="paragraph">
+<p>Take a look at the following graphic - each Validated Pattern (use-case dependent) consumes these technologies. The modularity of the framework allows us to add/remove resources to meet the requirements of the use-case. If a pattern only deploys on a single cluster, there is no need to deploy Red Hat Advanced Cluster Management for Kubernetes, therefore we can remove the declarations for Red Hat Advanced Cluster Management for Kubernetes in the <code>values-hub.yaml</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-techSlide.png" alt="introduction techSlide">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Reusability is a major theme that will be seen throughout this workshop.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When we dive into these core technologies we start to see the low-level technology being used throughout the framework</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-batteriesIncluded.png" alt="introduction batteriesIncluded">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="whotheyfor"><a class="anchor" href="#whotheyfor"></a>Who are patterns for?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Value provided by Validated Patterns is unique to each individual or organization. Generally speaking Patterns provide value to our:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/introduction-pattern-values.png" alt="introduction pattern values">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Customers - get going faster, reduce risk, time to value</p>
+</li>
+<li>
+<p>Sales - don&#8217;t spend time architecting, they have a tested use ccase for a base deployment. Though messaged for a specific vertical in some cases, they can be used across other verticals.</p>
+</li>
+<li>
+<p>Partners - free use of a defined architecture that you can build a solution on top of. All the value to accelerate sales/deployments.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Can also be used as a way to promote your product (HashiCorp)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>GSIs or Consulting Services - predefined architectures, ready to deploy with minimal modifications. They can trust in the use-case as it is maintained across production version updates.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="../1_gettingStarted/getting-started.html" class="query-params-link">1. Getting Started</a></span>
+  <span class="next"><a href="patternsDemo.html" class="query-params-link">Demo</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img
+          src="../../../_/img/validated-patterns.png" height="40px" alt="Red Hat Validated Patterns"  href="https://redhat.com" ></a>
+</footer>
+<script src="../../../_/js/vendor/clipboard.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
