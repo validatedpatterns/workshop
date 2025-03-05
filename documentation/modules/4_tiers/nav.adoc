@@ -1,0 +1,5 @@
+// Chapter 4 - Pattern Maintenance Tiers
+* xref:tiers.adoc[4. Pattern Tiers]
+** xref:tiers.adoc#objectives[Topic Objectives]
+** xref:tiers.adoc#about[About the Pattern Tiers]
+** xref:tiers.adoc#resources[Additional Resources]

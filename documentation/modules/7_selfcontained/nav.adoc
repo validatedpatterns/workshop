@@ -1,0 +1,6 @@
+//Chapter 7 - SelfContained Pattern Resources
+* xref:selfContained.adoc[7. Self Contained Patterns]
+** xref:selfContained.adoc#objectives[Topic Objectives]
+//** xref:selfContained.adoc#contained[Self Contained?] (NON-EXISTENT)
+** xref:selfContained.adoc#thoughts[Additional Thoughts]
+//** xref:selfContained.adoc[Exercises]
