@@ -1,0 +1,7 @@
+== Helm for Fun and Profit
+
+include::_attributes.adoc[]
+
+include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
+
+[#website]
