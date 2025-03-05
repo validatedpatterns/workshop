@@ -3,6 +3,7 @@ title: Validated Patterns Workshop
 version: main
 nav:
   - modules/ROOT/nav.adoc
+  - modules/1_gettingStarted/nav.adoc
   - modules/2_introduction/nav.adoc
   - modules/3_landscape/nav.adoc
   - modules/4_tiers/nav.adoc
