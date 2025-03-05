@@ -1,9 +1,1 @@
-// Chapter 1 - Getting Started
-* xref:getting-started.adoc[1. Getting Started]
-** xref:getting-started.adoc#prereqs[Pre-Requisites]
-
-//TODO//
-//** xref:helm.adoc[Helm for Fun and Profit]
-//*** xref:helm.adoc#objectives[Topic Objectives]
-//** xref:troubleshooting.adoc[Troubleshooting]
-//*** xref:troubleshooting.adoc#objectives[Topic Objectives]
+* xref:index.adoc[]
