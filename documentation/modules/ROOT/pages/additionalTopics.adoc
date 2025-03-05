@@ -1,4 +1,0 @@
-== Appendix - Additional Resources
-include::_attributes.adoc[]
-
-[#website]
