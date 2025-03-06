@@ -3,7 +3,7 @@
 OpenShift::	
 +	
 --
-To deploy a Validated Pattern you must have an OpenShift 4 cluster provsioned. To provision an OpenShift 4 cluster please use one of the methods at https://try.openshift.com[try.openshift.com] 
+Validated Patterns require that you have an OpenShift4 cluster provsioned. To provision an OpenShift 4 cluster please use one of the methods at https://try.openshift.com[try.openshift.com] 
 
 Once your cluster is provisioned, download the latest OpenShift client(oc) from https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/[here] and add to your path.	
 
