@@ -1,5 +1,5 @@
 == Validated Patterns Operator
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
 [#features]
 === Validated Operator Features
