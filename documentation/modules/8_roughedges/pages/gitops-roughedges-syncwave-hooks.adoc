@@ -1,5 +1,5 @@
 = Sync Waves and Hooks
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
 https://argoproj.github.io/argo-cd/user-guide/sync-waves/[Sync waves,window='_blank']
 are used in Argo CD to order how manifests are applied to the cluster. 
