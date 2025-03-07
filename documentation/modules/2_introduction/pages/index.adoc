@@ -1,0 +1,14 @@
+== Introduction
+
+include::main@vp-workshop:ROOT:_attributes.adoc[]
+
+include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
+
+* What are Validated Patterns?
+** Explain high level benefits provided by Validated Patterns
+** Discuss what is included in the patterns initiative
+** Detail the difference between a community and validated patterns
+* Who are Validated Patterns for?
+** Explain the high level benefit for each persona
+** Clarify the requirements to become validated
+* Where can you keep up to date or point people to find more information?
