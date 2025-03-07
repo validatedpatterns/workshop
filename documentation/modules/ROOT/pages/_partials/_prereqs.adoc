@@ -1,5 +1,3 @@
-[#prereqs]
-
 The following CLI tools are required for running the exercises in this workshop. Please have them installed and configured prior to beginning any of the workshop chapters.
 
 [cols="4*^,4*.",options="header,+attributes"]
