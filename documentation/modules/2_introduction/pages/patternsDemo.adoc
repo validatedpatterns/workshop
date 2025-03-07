@@ -1,4 +1,4 @@
-include::main@vp-workshop:ROOT:_attributes.adoc[]
+include::_attributes.adoc[]
 
 [#demo]
 The following demonstration is of the link:https://validatedpatterns.io/patterns/medical-diagnosis[medical-diagnosis] pattern. 

@@ -1,5 +1,5 @@
 = Getting Started
-include::main@vp-workshop:ROOT:_attributes.adoc[]
+include::_attributes.adoc[]
 
 == Prerequisites
 

@@ -1,4 +1,4 @@
-include::main@vp-workshop:ROOT:_attributes.adoc[]
+include::_attributes.adoc[]
 
 [#values]
 == Values Files

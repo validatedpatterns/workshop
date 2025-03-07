@@ -1,5 +1,5 @@
 == To fork or not to fork
-include::main@vp-workshop:ROOT:_attributes.adoc[]
+include::_attributes.adoc[]
 
 [#about]
 === Why fork?
