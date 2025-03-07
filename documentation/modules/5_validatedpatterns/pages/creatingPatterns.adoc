@@ -1,5 +1,5 @@
 == Creating Validated Patterns
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
@@ -96,7 +96,7 @@ The final step is to ensure that the configuration of those components, and the 
 == Setting up naming
 
 There are two names that exist a pattern: The `pattern` name  and the `clusterGroup` name.
-Best practice is to align `pattern` with the repository title as it drives file naming for secrets file: `values-secrets-{pattern}.yaml`
+Best practice is to align `pattern` with the repository title as it drives file naming for secrets file: `values-secrets-<patternName>.yaml`
 
 clusterGroup is most relevant when you have multiple clusters. Otherwise you can rely on the default `hub` group.
 
