@@ -1,6 +1,6 @@
 == Troubleshooting
 
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 

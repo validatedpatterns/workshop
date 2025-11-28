@@ -1,6 +1,6 @@
 == Pattern Landscape
 
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
 include::main@vp-workshop:ROOT:partial$topicHeader.adoc[]
 
@@ -23,15 +23,16 @@ As of July 2024 we can see that there has been a significant uptick in activity.
 image::landscape-july24.png[]
 
 == Validated Patterns WebSite
-The easiest and fastest way to find out what Validated Patterns are available and their availability is to check out the Validated Patterns website.
+
+Validated Patterns is an Open Source project. The documentation for each pattern is public along with their associated github repos. The fastest, most reliable way to find out what Patterns are avaialble is to check out our website.
 
 [#website]
 
-Validated Patterns are an Open Source effort. Information about the Validated Patterns can be found on the link:https://validatedpatterns.io[Patterns Website].
+link:https://validatedpatterns.io[Patterns Website].
 
 [#github]
 
-The Patterns are also hosted in link:https://github.com/validatedpatterns/repositories[GitHub]
+link:https://github.com/validatedpatterns/repositories[GitHub]
 
 //[#youtube]
 // Find out our youtube channel link

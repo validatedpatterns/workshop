@@ -1,6 +1,7 @@
 = Getting Started
-include::_attributes.adoc[]
+include::main@vp-workshop:ROOT:_attributes.adoc[]
 
+[#prereqs]
 == Prerequisites
 
 include::main@vp-workshop:ROOT:partial$_prereqs.adoc[]
